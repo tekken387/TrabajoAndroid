@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "490574281776",
+    "firebase_url": "https://trabajoandroid-53de0.firebaseio.com",
+    "project_id": "trabajoandroid-53de0",
+    "storage_bucket": "trabajoandroid-53de0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490574281776:android:37284100a06cfc10",
+        "android_client_info": {
+          "package_name": "afinal.edu.pe.trabajoandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490574281776-0j82pp1nh07v1boor2ondp45qa9s4joj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "afinal.edu.pe.trabajoandroid",
+            "certificate_hash": "052faa08989be04d41a059da03f2cb04bc874277"
+          }
+        },
+        {
+          "client_id": "490574281776-37q2a5g5pc3hn6kboc2gmklo728pk87r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9U34T264MrwN4j2798FFMkkkFIhdjnVg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "490574281776-37q2a5g5pc3hn6kboc2gmklo728pk87r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
