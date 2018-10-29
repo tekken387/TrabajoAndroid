@@ -1,5 +1,6 @@
 package afinal.edu.pe.trabajoandroid;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,18 +40,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         _btningresar.setOnClickListener(this);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
-    }
 
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()){
+            case R.id.btnIngresar:
+                login(_txtusername.getText().toString(),_txtpwd.getText().toString());
+                break;
+        }
     }
 
     public void login(String email, String password){
@@ -60,20 +58,29 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if (task.isSuccessful()) {
-                    // Sign in success, update UI with the signed-in user's information
-                    //Log.d(TAG, "signInWithEmail:success");
+
                     FirebaseUser user = auth.getCurrentUser();
-                    //updateUI(user);
+                    Toast.makeText(LoginActivity.this, "Authentication Successfull.",
+                            Toast.LENGTH_SHORT).show();
+
+                    abrirmain();
+
                 } else Toast.makeText(LoginActivity.this, "Authentication failed.",
                         Toast.LENGTH_SHORT).show();
 
                 // [START_EXCLUDE]
                 if (!task.isSuccessful()) {
-                    mStatusTextView.setText(R.string.auth_failed);
+                    Toast.makeText(LoginActivity.this, "Authentication failed.",
+                            Toast.LENGTH_SHORT).show();
                 }
-                hideProgressDialog();
+
                 // [END_EXCLUDE]
             }
-        })
+        });
+    }
+
+    private void abrirmain() {
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }

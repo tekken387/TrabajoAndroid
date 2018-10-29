@@ -55,6 +55,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnLogout:
                 user=auth.getInstance().getCurrentUser();
                 auth.signOut();
+                abrirlogin();
+                break;
         }
+    }
+
+    public void abrirlogin(){
+        Intent intent=new Intent(this,LoginActivity.class);
+        startActivity(intent);
     }
 }
