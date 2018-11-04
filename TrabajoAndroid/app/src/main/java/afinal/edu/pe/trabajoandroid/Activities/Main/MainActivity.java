@@ -9,6 +9,8 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseAuth;
 
+import afinal.edu.pe.trabajoandroid.Activities.Clients.ClientsActivity;
+import afinal.edu.pe.trabajoandroid.Models.Clients;
 import afinal.edu.pe.trabajoandroid.R;
 import afinal.edu.pe.trabajoandroid.Util.FinalSharedPreferences;
 
@@ -16,6 +18,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     FinalSharedPreferences prefs;
     Button _btnlogout;
+    Button _btnclients;
+    Button _btnos;
+    Button _btnservices;
     FirebaseUser user;
     FirebaseAuth auth;
 
@@ -26,9 +31,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         prefs=new FinalSharedPreferences(this);
 
+        _btnclients=findViewById(R.id.btnclients);
+        _btnos=findViewById(R.id.btnos);
+        _btnservices=findViewById(R.id.btnservices);
         _btnlogout=findViewById(R.id.btnLogout);
 
         _btnlogout.setOnClickListener(this);
+        _btnclients.setOnClickListener(this);
+        _btnos.setOnClickListener(this);
+        _btnservices.setOnClickListener(this);
 
         auth = auth.getInstance();
         user=auth.getCurrentUser();
@@ -37,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onBackPressed() {
-
+        //no hace nada cuando presiona el boton de atras
     }
 
     @Override
@@ -58,6 +69,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 auth.getInstance().signOut();
                 abrirlogin();
                 break;
+            case R.id.btnclients:
+                Intent intent=new Intent(this,ClientsActivity.class);
+                startActivity(intent);
         }
     }
 
