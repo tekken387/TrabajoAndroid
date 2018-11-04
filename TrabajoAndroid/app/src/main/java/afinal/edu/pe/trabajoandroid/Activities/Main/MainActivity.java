@@ -1,4 +1,4 @@
-package afinal.edu.pe.trabajoandroid;
+package afinal.edu.pe.trabajoandroid.Activities.Main;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseAuth;
 
+import afinal.edu.pe.trabajoandroid.R;
 import afinal.edu.pe.trabajoandroid.Util.FinalSharedPreferences;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -28,33 +29,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         _btnlogout=findViewById(R.id.btnLogout);
 
         _btnlogout.setOnClickListener(this);
+
+        auth = auth.getInstance();
+        user=auth.getCurrentUser();
+
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        if (user != null) {
-            //se queda en la pantalla main
-        } else {
+        if (user==null) {
             Intent intent=new Intent(this,LoginActivity.class);
             startActivity(intent);
         }
 
-        //String usuario = prefs.getString(prefs.SHARE_PREFERENCES_USUARIO,null);
-        /*if(usuario==null){
-            Intent intent=new Intent(this,LoginActivity.class);
-            startActivity(intent);
-        }*/
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnLogout:
-                user=auth.getInstance().getCurrentUser();
-                auth.signOut();
+                auth.getInstance().signOut();
                 abrirlogin();
                 break;
         }

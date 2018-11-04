@@ -9,27 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.Main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".ClientsActivity" />
-        <activity android:name=".ClientRegisterActivity" />
-        <activity android:name=".ClientEditActivity" />
-        <activity android:name=".ClientDetailActivity" />
-        <activity android:name=".VehiclesActivity" />
-        <activity android:name=".VehicleRegisterActivity" />
-        <activity android:name=".VehicleEditActivity" />
-        <activity android:name=".VehicleDetailActivity" />
-        <activity android:name=".ServicesActivity" />
-        <activity android:name=".ServiceOrdersActivity" />
-        <activity android:name=".ServiceOrderRegisterActivity" />
-        <activity android:name=".ServiceOrderEditActivity" />
-        <activity android:name=".ServiceOrderDetailActivity"></activity>
+        <activity android:name=".Activities.Main.LoginActivity" />
+        <activity android:name=".Activities.Clients.ClientsActivity" />
+        <activity android:name=".Activities.Clients.ClientRegisterActivity" />
+        <activity android:name=".Activities.Clients.ClientEditActivity" />
+        <activity android:name=".Activities.Clients.ClientDetailActivity" />
+        <activity android:name=".Activities.Vehicle.VehiclesActivity" />
+        <activity android:name=".Activities.Vehicle.VehicleRegisterActivity" />
+        <activity android:name=".Activities.Vehicle.VehicleEditActivity" />
+        <activity android:name=".Activities.Vehicle.VehicleDetailActivity" />
+        <activity android:name=".Activities.Services.ServicesActivity" />
+        <activity android:name=".Activities.ServiceOrder.ServiceOrdersActivity" />
+        <activity android:name=".Activities.ServiceOrder.ServiceOrderRegisterActivity" />
+        <activity android:name=".Activities.ServiceOrder.ServiceOrderEditActivity" />
+        <activity android:name=".Activities.ServiceOrder.ServiceOrderDetailActivity"></activity>
     </application>
 
 </manifest>

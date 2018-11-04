@@ -1,7 +1,8 @@
-package afinal.edu.pe.trabajoandroid;
+package afinal.edu.pe.trabajoandroid.Activities.Vehicle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import afinal.edu.pe.trabajoandroid.R;
 
 public class VehiclesActivity extends AppCompatActivity {
 
