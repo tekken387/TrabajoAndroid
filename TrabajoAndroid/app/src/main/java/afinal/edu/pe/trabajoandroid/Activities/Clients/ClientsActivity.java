@@ -33,7 +33,7 @@ public class ClientsActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clients);
 
-        btnclientadd.findViewById(R.id.btnclientadd);
+        btnclientadd=findViewById(R.id.btnclientadd);
         lvclients=findViewById(R.id.lvclients);
 
         btnclientadd.setOnClickListener(this);

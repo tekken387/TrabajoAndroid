@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseAuth;
 
+import afinal.edu.pe.trabajoandroid.Activities.Clients.ClientRegisterActivity;
 import afinal.edu.pe.trabajoandroid.Activities.Clients.ClientsActivity;
 import afinal.edu.pe.trabajoandroid.Activities.ServiceOrder.ServiceOrdersActivity;
 import afinal.edu.pe.trabajoandroid.Activities.Services.ServicesActivity;
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 abrirlogin();
                 break;
             case R.id.btnclients:
-                intent=new Intent(this,ClientsActivity.class);
+                intent=new Intent(this,ClientRegisterActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btnservices:

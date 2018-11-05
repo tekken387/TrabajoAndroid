@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -15,43 +17,55 @@ import afinal.edu.pe.trabajoandroid.R;
 
 public class ClientRegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnclientsave;
-    TextView txtclientnameadd;
-    TextView txtclientnameadd2;
-    TextView txtclientemailadd;
-    TextView txtclientdniadd;
-    TextView txtclientphoneadd;
+    Button _btnclientsave;
+    TextView _txtclientnameadd;
+    TextView _txtclientnameadd2;
+    TextView _txtclientemailadd;
+    TextView _txtclientdniadd;
+    TextView _txtclientphoneadd;
     FirebaseDatabase database;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_register);
 
-        btnclientsave.findViewById(R.id.btnclientsave);
-        txtclientdniadd.findViewById(R.id.txtclientdniadd);
-        txtclientemailadd.findViewById(R.id.txtclientemailadd);
-        txtclientnameadd.findViewById(R.id.txtclientnameadd);
-        txtclientnameadd2.findViewById(R.id.txtclientnameadd2);
+        _btnclientsave=findViewById(R.id.btnclientsave);
+        _txtclientdniadd=findViewById(R.id.txtclientdniadd);
+        _txtclientemailadd=findViewById(R.id.txtclientemailadd);
+        _txtclientnameadd=findViewById(R.id.txtclientnameadd);
+        _txtclientnameadd2=findViewById(R.id.txtclientnameadd2);
+        _txtclientphoneadd=findViewById(R.id.txtclientphoneadd);
+        _btnclientsave.setOnClickListener(this);
 
-        btnclientsave.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.btnclientadd){
+        if(v.getId()==R.id.btnclientsave){
             database = FirebaseDatabase.getInstance();
-            DatabaseReference mensajesRef = database.getReference("mensajes");
-            DatabaseReference mensajeActualRef = mensajesRef.push();
+            DatabaseReference clientsRef = database.getReference("clientes");
+            DatabaseReference clientActualRef = clientsRef.push();
 
             HashMap map=new HashMap();
 
-            map.put("id_usuario",pf.getString(ChatkiSharedPreferences.PREF_IDUSUARIO,null));
-            map.put("nombre",pf.getString(ChatkiSharedPreferences.PREF_NOMBRE_USUARIO,null));
-            map.put("mensaje",txtmensaje.getText().toString());
-            map.put("hora",System.currentTimeMillis());
-            mensajeActualRef.updateChildren(map);
-
+            map.put("id_usuario",clientActualRef.getKey());
+            map.put("nombre",_txtclientnameadd.getText().toString());
+            map.put("apellido",_txtclientnameadd2.getText().toString());
+            map.put("documento",_txtclientdniadd.getText().toString());
+            map.put("telefono",_txtclientphoneadd.getText().toString());
+            map.put("email",_txtclientemailadd.getText().toString());
+            clientActualRef.updateChildren(map);
+            limpiar();
         }
+    }
+
+    public void limpiar(){
+        _txtclientemailadd.setText("");
+        _txtclientdniadd.setText("");
+        _txtclientnameadd.setText("");
+        _txtclientnameadd2.setText("");
+        _txtclientphoneadd.setText("");
     }
 }
