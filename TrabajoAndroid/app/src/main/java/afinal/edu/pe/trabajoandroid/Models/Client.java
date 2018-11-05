@@ -1,9 +1,10 @@
 package afinal.edu.pe.trabajoandroid.Models;
 
-public class Clients {
+public class Client {
 
     private int idcliente;
     private String nombre;
+    private String apellido;
     private String documento;
     private String telefono;
     private String email;
@@ -47,5 +48,13 @@ public class Clients {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 }

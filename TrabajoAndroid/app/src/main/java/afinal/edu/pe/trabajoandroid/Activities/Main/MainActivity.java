@@ -10,7 +10,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseAuth;
 
 import afinal.edu.pe.trabajoandroid.Activities.Clients.ClientsActivity;
-import afinal.edu.pe.trabajoandroid.Models.Clients;
+import afinal.edu.pe.trabajoandroid.Activities.ServiceOrder.ServiceOrdersActivity;
+import afinal.edu.pe.trabajoandroid.Activities.Services.ServicesActivity;
 import afinal.edu.pe.trabajoandroid.R;
 import afinal.edu.pe.trabajoandroid.Util.FinalSharedPreferences;
 
@@ -64,14 +65,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        Intent intent;
         switch (v.getId()) {
             case R.id.btnLogout:
                 auth.getInstance().signOut();
                 abrirlogin();
                 break;
             case R.id.btnclients:
-                Intent intent=new Intent(this,ClientsActivity.class);
+                intent=new Intent(this,ClientsActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.btnservices:
+                intent=new Intent(this,ServicesActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnos:
+                intent=new Intent(this,ServiceOrdersActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 

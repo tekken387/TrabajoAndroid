@@ -1,4 +1,4 @@
 package afinal.edu.pe.trabajoandroid.Models;
 
-public class Vehicles {
+public class Vehicle {
 }
