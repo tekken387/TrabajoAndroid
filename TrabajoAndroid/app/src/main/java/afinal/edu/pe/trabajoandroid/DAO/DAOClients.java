@@ -9,4 +9,11 @@ public class DAOClients{
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         return database.getReference("clientes");
     }
+
+    public static Query updateClient(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        return database.getReference("clientes");
+    }
+
+
 }

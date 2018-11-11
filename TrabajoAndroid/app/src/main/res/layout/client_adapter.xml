@@ -43,7 +43,7 @@
         android:id="@+id/btnclientedit"
         android:layout_width="78dp"
         android:layout_height="35dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:text="Editar"

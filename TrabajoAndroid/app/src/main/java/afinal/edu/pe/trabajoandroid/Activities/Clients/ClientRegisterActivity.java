@@ -49,8 +49,6 @@ public class ClientRegisterActivity extends AppCompatActivity implements View.On
             DatabaseReference clientsRef = database.getReference("clientes");
             DatabaseReference clientActualRef = clientsRef.push();
 
-            HashMap map=new HashMap();
-
             Client cliente=new Client();
             cliente.setIdcliente(clientActualRef.getKey());
             cliente.setNombre(_txtclientnameadd.getText().toString());
@@ -58,15 +56,6 @@ public class ClientRegisterActivity extends AppCompatActivity implements View.On
             cliente.setDocumento(_txtclientdniadd.getText().toString());
             cliente.setEmail(_txtclientemailadd.getText().toString());
             cliente.setTelefono(_txtclientphoneadd.getText().toString());
-
-            /*
-            map.put("id_usuario",clientActualRef.getKey());
-            map.put("nombre",_txtclientnameadd.getText().toString());
-            map.put("apellido",_txtclientnameadd2.getText().toString());
-            map.put("documento",_txtclientdniadd.getText().toString());
-            map.put("telefono",_txtclientphoneadd.getText().toString());
-            map.put("email",_txtclientemailadd.getText().toString());
-            clientActualRef.updateChildren(cliente);*/
 
             clientsRef.child(clientActualRef.getKey()).setValue(cliente);
 

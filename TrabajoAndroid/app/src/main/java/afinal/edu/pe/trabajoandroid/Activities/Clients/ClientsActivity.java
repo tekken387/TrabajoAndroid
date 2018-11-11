@@ -47,28 +47,16 @@ public class ClientsActivity extends AppCompatActivity implements View.OnClickLi
         clientes=new ArrayList<Client>();
 
         btnclientadd.setOnClickListener(this);
-
-        DatabaseReference clientRef = FirebaseDatabase.getInstance().getReference("clientes");
-        FirebaseListOptions<Client> options =
-                new FirebaseListOptions.Builder<Client>()
-                        .setQuery(clientRef, Client.class)
-                        .setLayout(R.layout.client_adapter)
-                        .setLifecycleOwner(this)
-                        .build();
-
-        ListAdapter adapter = new FirebaseListAdapter<Client>(options) {
-            @Override
-            protected void populateView(View view, Client s, int i) {
-                TextView text = view.findViewById(R.id.txtclientname);
-                text.setText(s.getNombre() + ": " + s.getApellido() + " - "+  s.getDocumento());
-            }
-        };
-        lvclients.setAdapter(adapter);
+        //DatabaseReference clientRef = FirebaseDatabase.getInstance().getReference("clientes");
+        cargaDatos();
 
     }
 
     public void cargaDatos(){
 
+        ClientAdapter adapter = new ClientAdapter(this);
+
+        lvclients.setAdapter(adapter);
     }
 
     @Override
