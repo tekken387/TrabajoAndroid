@@ -29,14 +29,14 @@
         android:layout_height="23dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="76dp"
         android:text="Nombre"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txtclientnameedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
@@ -53,23 +53,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="44dp"
         android:text="Apellido"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/txtclientname2edit"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/txtclientnameedit" />
 
     <TextView
         android:id="@+id/textView26"
@@ -77,23 +77,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:text="Documento"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/txtclientdniedit"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="43dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtclientname2edit" />
 
     <TextView
         android:id="@+id/textView27"
@@ -101,23 +101,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:text="Email"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/txtclientemailedit"
         android:layout_width="wrap_content"
-        android:layout_height="44dp"
+        android:layout_height="41dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/txtclientdniedit" />
 
     <TextView
         android:id="@+id/textView28"
@@ -125,26 +125,26 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:text="Telefono"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/txtclientphoneedit"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="42dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/txtclientemailedit" />
 
     <Button
-        android:id="@+id/Guardar"
+        android:id="@+id/btnsaveedit"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
