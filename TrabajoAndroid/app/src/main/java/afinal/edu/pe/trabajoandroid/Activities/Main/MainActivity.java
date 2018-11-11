@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 abrirlogin();
                 break;
             case R.id.btnclients:
-                intent=new Intent(this,ClientRegisterActivity.class);
+                intent=new Intent(this,ClientsActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btnservices:

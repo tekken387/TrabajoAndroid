@@ -13,6 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
+import afinal.edu.pe.trabajoandroid.Models.Client;
 import afinal.edu.pe.trabajoandroid.R;
 
 public class ClientRegisterActivity extends AppCompatActivity implements View.OnClickListener {
@@ -50,13 +51,25 @@ public class ClientRegisterActivity extends AppCompatActivity implements View.On
 
             HashMap map=new HashMap();
 
+            Client cliente=new Client();
+            cliente.setIdcliente(clientActualRef.getKey());
+            cliente.setNombre(_txtclientnameadd.getText().toString());
+            cliente.setApellido(_txtclientnameadd2.getText().toString());
+            cliente.setDocumento(_txtclientdniadd.getText().toString());
+            cliente.setEmail(_txtclientemailadd.getText().toString());
+            cliente.setTelefono(_txtclientphoneadd.getText().toString());
+
+            /*
             map.put("id_usuario",clientActualRef.getKey());
             map.put("nombre",_txtclientnameadd.getText().toString());
             map.put("apellido",_txtclientnameadd2.getText().toString());
             map.put("documento",_txtclientdniadd.getText().toString());
             map.put("telefono",_txtclientphoneadd.getText().toString());
             map.put("email",_txtclientemailadd.getText().toString());
-            clientActualRef.updateChildren(map);
+            clientActualRef.updateChildren(cliente);*/
+
+            clientsRef.child(clientActualRef.getKey()).setValue(cliente);
+
             limpiar();
         }
     }

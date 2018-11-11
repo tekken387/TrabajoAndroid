@@ -7,6 +7,6 @@ public class DAOClients{
 
     public static Query getClients(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        return database.getReference("usuarios");
+        return database.getReference("clientes");
     }
 }

@@ -9,7 +9,7 @@
     <ListView
         android:id="@+id/lvclients"
         android:layout_width="373dp"
-        android:layout_height="360dp"
+        android:layout_height="402dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:text="Lista de Clientes"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,10 @@
         android:id="@+id/btnclientadd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:text="Agregar"
-        tools:layout_editor_absoluteX="258dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

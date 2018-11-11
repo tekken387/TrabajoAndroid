@@ -43,6 +43,7 @@ public class ClientAdapter extends ArrayAdapter {
         _txtclientname2.setText(client.getApellido());
         _txtclientemail.setText(client.getEmail());
 
+
         return view;
 
     }

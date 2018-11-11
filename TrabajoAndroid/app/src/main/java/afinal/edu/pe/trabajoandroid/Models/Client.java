@@ -2,19 +2,29 @@ package afinal.edu.pe.trabajoandroid.Models;
 
 public class Client {
 
-    private int idcliente;
+    private String idcliente;
     private String nombre;
     private String apellido;
     private String documento;
     private String telefono;
     private String email;
 
+    public Client(){}
 
-    public int getIdcliente() {
+    public Client(String idcliente, String nombre, String apellido, String documento, String telefono, String email) {
+        this.idcliente = idcliente;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.documento = documento;
+        this.telefono = telefono;
+        this.email = email;
+    }
+
+    public String getIdcliente() {
         return idcliente;
     }
 
-    public void setIdcliente(int idcliente) {
+    public void setIdcliente(String idcliente) {
         this.idcliente = idcliente;
     }
 
