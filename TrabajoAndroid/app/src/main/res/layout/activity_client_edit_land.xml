@@ -40,7 +40,7 @@
     <EditText
         android:id="@+id/txtclientnameedit"
         android:layout_width="wrap_content"
-        android:layout_height="35"
+        android:layout_height="35sp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
@@ -67,7 +67,7 @@
     <EditText
         android:id="@+id/txtclientname2edit"
         android:layout_width="wrap_content"
-        android:layout_height="35"
+        android:layout_height="35sp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
@@ -94,7 +94,7 @@
     <EditText
         android:id="@+id/txtclientdniedit"
         android:layout_width="wrap_content"
-        android:layout_height="35"
+        android:layout_height="35sp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
@@ -121,7 +121,7 @@
     <EditText
         android:id="@+id/txtclientemailedit"
         android:layout_width="wrap_content"
-        android:layout_height="35"
+        android:layout_height="35sp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
@@ -148,7 +148,7 @@
     <EditText
         android:id="@+id/txtclientphoneedit"
         android:layout_width="wrap_content"
-        android:layout_height="35"
+        android:layout_height="35sp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
