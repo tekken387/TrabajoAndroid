@@ -43,9 +43,9 @@
         android:text="Lista Servicio"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:fontFamily="sans-serif-smallcaps"
+        app:fontFamily="@font/lemon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

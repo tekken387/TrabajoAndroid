@@ -30,6 +30,10 @@
         <activity android:name=".Activities.ServiceOrder.ServiceOrderRegisterActivity" />
         <activity android:name=".Activities.ServiceOrder.ServiceOrderEditActivity" />
         <activity android:name=".Activities.ServiceOrder.ServiceOrderDetailActivity"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
