@@ -20,7 +20,7 @@ import afinal.edu.pe.trabajoandroid.R;
 public class ClientDetailActivity extends AppCompatActivity implements View.OnClickListener {
 
     String id;
-    TextView txtclientnameshow;
+    TextView txtclientnameshow2;
     TextView txtclientname2show;
     TextView txtclientdnishow;
     TextView txtclientphoneshow;
@@ -35,7 +35,7 @@ public class ClientDetailActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_detail);
 
-        txtclientnameshow=findViewById(R.id.txtclientnameshow);
+        txtclientnameshow2=findViewById(R.id.txtclientnameshow2);
         txtclientname2show=findViewById(R.id.txtclientname2show);
         txtclientdnishow=findViewById(R.id.txtclientdnishow);
         txtclientphoneshow=findViewById(R.id.txtclientphoneshow);
@@ -59,7 +59,7 @@ public class ClientDetailActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Client cliente=dataSnapshot.getValue(Client.class);
-                txtclientnameshow.setText(cliente.getNombre());
+                txtclientnameshow2.setText(cliente.getNombre());
                 txtclientname2show.setText(cliente.getApellido());
                 txtclientdnishow.setText(cliente.getDocumento());
                 txtclientemailshow.setText(cliente.getEmail());

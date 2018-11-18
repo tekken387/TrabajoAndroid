@@ -1,31 +1,20 @@
-package afinal.edu.pe.trabajoandroid.Adapters;
+package afinal.edu.pe.trabajoandroid.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.List;
-
-import afinal.edu.pe.trabajoandroid.Activities.Clients.ClientDetailActivity;
-import afinal.edu.pe.trabajoandroid.Activities.Clients.ClientEditActivity;
-import afinal.edu.pe.trabajoandroid.Activities.Clients.ClientRegisterActivity;
-import afinal.edu.pe.trabajoandroid.Activities.Clients.ClientsActivity;
-import afinal.edu.pe.trabajoandroid.Models.Client;
 import afinal.edu.pe.trabajoandroid.R;
+import afinal.edu.pe.trabajoandroid.activities.clients.ClientDetailActivity;
+import afinal.edu.pe.trabajoandroid.activities.clients.ClientEditActivity;
+import afinal.edu.pe.trabajoandroid.models.Client;
 
 public class ClientAdapter extends FirebaseListAdapter<Client> {
 

@@ -1,4 +1,4 @@
-package afinal.edu.pe.trabajoandroid.Activities.Clients;
+package afinal.edu.pe.trabajoandroid.activities.clients;
 
 import android.content.Intent;
 import android.renderscript.Sampler;
@@ -24,11 +24,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import afinal.edu.pe.trabajoandroid.Adapters.ClientAdapter;
-import afinal.edu.pe.trabajoandroid.DAO.DAOClients;
-import afinal.edu.pe.trabajoandroid.Models.Client;
+import afinal.edu.pe.trabajoandroid.adapters.ClientAdapter;
+import afinal.edu.pe.trabajoandroid.dao.DAOClients;
+import afinal.edu.pe.trabajoandroid.models.Client;
 import afinal.edu.pe.trabajoandroid.R;
-import afinal.edu.pe.trabajoandroid.Util.ChildEventListenerApp;
+import afinal.edu.pe.trabajoandroid.util.ChildEventListenerApp;
 
 public class ClientsActivity extends AppCompatActivity implements View.OnClickListener {
 
