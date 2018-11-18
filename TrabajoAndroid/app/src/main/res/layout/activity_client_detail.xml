@@ -6,19 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".activities.clients.ClientDetailActivity">
 
-    <Button
+    <ImageButton
         android:id="@+id/btnbackshow"
-        android:layout_width="112dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="60dp"
-        android:text="Atras"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:srcCompat="@drawable/back" />
 
     <TextView
         android:id="@+id/textView12"
@@ -118,8 +115,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
-        android:layout_marginEnd="108dp"
-        android:layout_marginRight="108dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginRight="107dp"
         android:text="----------"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,7 +126,7 @@
         android:id="@+id/txtclientname2show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="108dp"
         android:layout_marginRight="108dp"
         android:text="----------"
