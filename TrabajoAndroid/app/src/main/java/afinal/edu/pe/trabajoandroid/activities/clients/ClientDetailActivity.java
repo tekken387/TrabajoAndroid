@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -19,7 +20,6 @@ import afinal.edu.pe.trabajoandroid.R;
 
 public class ClientDetailActivity extends AppCompatActivity implements View.OnClickListener {
 
-    String id;
     TextView txtclientnameshow2;
     TextView txtclientname2show;
     TextView txtclientdnishow;
@@ -42,35 +42,38 @@ public class ClientDetailActivity extends AppCompatActivity implements View.OnCl
         txtclientemailshow=findViewById(R.id.txtclientemailshow);
         btnbackshow=findViewById(R.id.btnbackshow);
         btnbackshow.setOnClickListener(this);
-
+        db = FirebaseDatabase.getInstance();
         Bundle extras = getIntent().getExtras();
+
+
+        String id;
         if(extras == null) {
             id= null;
         } else {
             id= extras.getString("idcliente");
         }
 
-        //txtclientnameshow.setText(id.toString());
+        if(id != null) {
+            DatabaseReference clientsRef = db.getReference("clientes/" + id);
+            clientsRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Client cliente = dataSnapshot.getValue(Client.class);
+                    txtclientnameshow2.setText(cliente.getNombre());
+                    txtclientname2show.setText(cliente.getApellido());
+                    txtclientdnishow.setText(cliente.getDocumento());
+                    txtclientemailshow.setText(cliente.getEmail());
+                    txtclientphoneshow.setText(cliente.getTelefono());
+                }
 
-        db = FirebaseDatabase.getInstance();
-        DatabaseReference clientsRef = db.getReference("clientes/"+id);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        clientsRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Client cliente=dataSnapshot.getValue(Client.class);
-                txtclientnameshow2.setText(cliente.getNombre());
-                txtclientname2show.setText(cliente.getApellido());
-                txtclientdnishow.setText(cliente.getDocumento());
-                txtclientemailshow.setText(cliente.getEmail());
-                txtclientphoneshow.setText(cliente.getTelefono());
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+                }
+            });
+        }else{
+            Toast.makeText(this,"Hubo un error al consultar cliente...",Toast.LENGTH_SHORT).show();
+        }
     }
 
 
@@ -80,4 +83,10 @@ public class ClientDetailActivity extends AppCompatActivity implements View.OnCl
             this.finish();
         }
     }
+
+    public void cerrarActivity(){
+        this.finish();
+    }
+
+
 }

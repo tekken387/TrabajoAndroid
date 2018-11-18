@@ -45,10 +45,9 @@ public class ClientsActivity extends AppCompatActivity implements View.OnClickLi
 
         btnclientadd=findViewById(R.id.btnclientadd);
         lvclients=findViewById(R.id.lvclients);
-        clientes=new ArrayList<Client>();
+        clientes=new ArrayList<>();
 
         btnclientadd.setOnClickListener(this);
-        //DatabaseReference clientRef = FirebaseDatabase.getInstance().getReference("clientes");
         cargaDatos();
 
     }
@@ -56,7 +55,6 @@ public class ClientsActivity extends AppCompatActivity implements View.OnClickLi
     public void cargaDatos(){
 
         ClientAdapter adapter = new ClientAdapter(this);
-
         lvclients.setAdapter(adapter);
     }
 
