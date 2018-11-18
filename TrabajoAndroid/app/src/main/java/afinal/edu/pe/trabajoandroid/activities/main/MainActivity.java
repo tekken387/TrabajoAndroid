@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,10 +19,10 @@ import afinal.edu.pe.trabajoandroid.util.FinalSharedPreferences;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     FinalSharedPreferences prefs;
-    Button _btnlogout;
-    Button _btnclients;
-    Button _btnos;
-    Button _btnservices;
+    ImageButton _btnlogout;
+    ImageButton _btnclients;
+    ImageButton _btnos;
+    ImageButton _btnservices;
     FirebaseUser user;
     FirebaseAuth auth;
 
