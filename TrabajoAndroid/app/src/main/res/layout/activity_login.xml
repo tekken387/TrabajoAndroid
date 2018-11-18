@@ -7,7 +7,7 @@
     android:background="@color/common_google_signin_btn_text_dark_default"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".Activities.Main.LoginActivity">
+    tools:context=".activities.main.LoginActivity">
 
     <ImageView
         android:id="@+id/imageView"
