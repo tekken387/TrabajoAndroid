@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
@@ -14,7 +15,7 @@ import afinal.edu.pe.trabajoandroid.R;
 
 public class ClientRegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button _btnclientsave;
+    ImageButton _btnclientsave;
     TextView _txtclientnameadd;
     TextView _txtclientnameadd2;
     TextView _txtclientemailadd;
