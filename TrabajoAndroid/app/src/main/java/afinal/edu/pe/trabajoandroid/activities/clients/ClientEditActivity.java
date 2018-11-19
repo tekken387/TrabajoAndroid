@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -14,6 +15,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import afinal.edu.pe.trabajoandroid.R;
 import afinal.edu.pe.trabajoandroid.models.Client;
@@ -27,7 +31,7 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
     EditText txtclientdniedit;
     EditText txtclientemailedit;
     EditText txtclientphoneedit;
-    Button btnsaveedit;
+    ImageButton btnsaveedit;
     String id;
 
     @Override
@@ -43,6 +47,7 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
         btnsaveedit.setOnClickListener(this);
 
         Bundle extras = getIntent().getExtras();
+
         if(extras == null) {
             id= null;
         } else {
@@ -53,7 +58,7 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
         DatabaseReference clientsRef = db.getReference("clientes/" + id);
 
         if(id != null) {
-            cargaDatos(id);
+            cargaDatos(id, clientsRef);
         }else{
             Toast.makeText(this,"Hubo un error al consultar cliente...",Toast.LENGTH_SHORT).show();
         }
@@ -63,9 +68,8 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
         this.finish();
     }
 
-    public void cargaDatos(String id){
+    public void cargaDatos(String id,DatabaseReference clientsRef){
 
-        DatabaseReference clientsRef = db.getReference("clientes/" + id);
         clientsRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -75,7 +79,6 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
                 txtclientdniedit.setText(cliente.getDocumento());
                 txtclientemailedit.setText(cliente.getEmail());
                 txtclientphoneedit.setText(cliente.getTelefono());
-
             }
 
             @Override
@@ -87,7 +90,7 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        DatabaseReference clientsRef = db.getReference("clientes/" + id);
+        DatabaseReference clientsRef = db.getReference("clientes/");
 
         Client cliente=new Client();
         cliente.setIdcliente(id);
@@ -97,6 +100,11 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
         cliente.setEmail(txtclientemailedit.getText().toString());
         cliente.setTelefono(txtclientphoneedit.getText().toString());
 
-        clientsRef.child(id).setValue(cliente);
+        HashMap map = new HashMap();
+        map.put(id,cliente);
+
+        clientsRef.updateChildren(map);
+        Toast.makeText(this,"Se actualizó correctamente...",Toast.LENGTH_SHORT).show();
+        cerrarActivity();
     }
 }
