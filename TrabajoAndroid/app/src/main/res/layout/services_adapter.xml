@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/txtservicename"
-        android:layout_width="86dp"
+        android:layout_width="191dp"
         android:layout_height="27dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
@@ -18,24 +18,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtclientname2"
-        android:layout_width="98dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="28dp"
-        android:text="Apellido"
-        app:layout_constraintStart_toEndOf="@+id/txtservicename"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtclientemail"
+        android:id="@+id/txtserviceprice"
         android:layout_width="191dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="84dp"
-        android:text="Email"
+        android:text="Precio"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,7 +40,7 @@
         app:srcCompat="@drawable/edit1" />
 
     <ImageButton
-        android:id="@+id/btnclientshow"
+        android:id="@+id/btnserviceshow"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginEnd="32dp"

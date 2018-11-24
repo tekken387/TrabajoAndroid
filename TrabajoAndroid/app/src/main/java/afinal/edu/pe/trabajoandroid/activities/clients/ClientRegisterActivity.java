@@ -3,7 +3,6 @@ package afinal.edu.pe.trabajoandroid.activities.clients;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -32,8 +31,8 @@ public class ClientRegisterActivity extends AppCompatActivity implements View.On
         _btnclientsave=findViewById(R.id.btnclientsave);
         _txtclientdniadd=findViewById(R.id.txtclientdniadd);
         _txtclientemailadd=findViewById(R.id.txtclientemailadd);
-        _txtclientnameadd=findViewById(R.id.txtclientnameadd);
-        _txtclientnameadd2=findViewById(R.id.txtclientnameadd2);
+        _txtclientnameadd=findViewById(R.id.txtservicenameadd);
+        _txtclientnameadd2=findViewById(R.id.txtservicepriceadd);
         _txtclientphoneadd=findViewById(R.id.txtclientphoneadd);
         _btnclientsave.setOnClickListener(this);
 

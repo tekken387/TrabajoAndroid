@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import afinal.edu.pe.trabajoandroid.R;
 
-public class ServicesRegisterActivity extends AppCompatActivity {
+public class ServiceEditActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_services_register);
+        setContentView(R.layout.activity_services_edit);
     }
 }

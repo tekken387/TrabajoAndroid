@@ -7,7 +7,7 @@
     tools:layout_editor_absoluteY="81dp">
 
     <TextView
-        android:id="@+id/txtclientname"
+        android:id="@+id/txtservicename"
         android:layout_width="86dp"
         android:layout_height="27dp"
         android:layout_marginStart="48dp"
@@ -25,7 +25,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="28dp"
         android:text="Apellido"
-        app:layout_constraintStart_toEndOf="@+id/txtclientname"
+        app:layout_constraintStart_toEndOf="@+id/txtservicename"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/btnclientedit"
+        android:id="@+id/btnserviceedit"
         android:layout_width="76dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
@@ -57,7 +57,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnclientedit"
+        app:layout_constraintTop_toBottomOf="@+id/btnserviceedit"
         app:srcCompat="@drawable/see1" />
 
 </android.support.constraint.ConstraintLayout>

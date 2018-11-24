@@ -34,8 +34,8 @@ public class ClientDetailActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_detail);
 
-        txtclientnameshow2=findViewById(R.id.txtclientnameshow2);
-        txtclientname2show=findViewById(R.id.txtclientname2show);
+        txtclientnameshow2=findViewById(R.id.txtservicepriceshow);
+        txtclientname2show=findViewById(R.id.txtservicepriceshow);
         txtclientdnishow=findViewById(R.id.txtclientdnishow);
         txtclientphoneshow=findViewById(R.id.txtclientphoneshow);
         txtclientemailshow=findViewById(R.id.txtclientemailshow);
