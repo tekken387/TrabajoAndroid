@@ -35,7 +35,9 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".activities.services.ServicesRegisterActivity"></activity>
+        <activity android:name=".activities.services.ServiceRegisterActivity" />
+        <activity android:name=".activities.services.ServiceEditActivity" />
+        <activity android:name=".activities.services.ServiceDetailActivity"></activity>
     </application>
 
 </manifest>
