@@ -1,171 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.clients.ClientRegisterActivity">
+    tools:context=".activities.clients.ClientDetailActivity">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="62dp"
-        android:text="Nombre"
-        android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        app:fontFamily="@font/salsa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="82dp"
+            android:text="Nombre"
+            android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:fontFamily="@font/salsa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="20dp"
-        android:text="Apellido"
-        android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        app:fontFamily="@font/salsa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="32dp"
+            android:text="Apellido"
+            android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:fontFamily="@font/salsa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-    <EditText
-        android:id="@+id/txtclientnameadd"
-        android:layout_width="wrap_content"
-        android:layout_height="35sp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/txtclientnameadd"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="62dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/txtclientnameadd2"
-        android:layout_width="wrap_content"
-        android:layout_height="35sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtclientnameadd" />
+        <EditText
+            android:id="@+id/txtclientnameadd2"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtclientnameadd" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:text="Nuevo Cliente"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:fontFamily="@font/lemon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="Nuevo Cliente"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/lemon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="20dp"
-        android:text="Email"
-        android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        app:fontFamily="@font/salsa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="32dp"
+            android:text="Email"
+            android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:fontFamily="@font/salsa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-    <EditText
-        android:id="@+id/txtclientemailadd"
-        android:layout_width="wrap_content"
-        android:layout_height="35sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtclientnameadd2" />
+        <EditText
+            android:id="@+id/txtclientemailadd"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtclientnameadd2" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="20dp"
-        android:text="Documento"
-        android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        app:fontFamily="@font/salsa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="32dp"
+            android:text="Documento"
+            android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:fontFamily="@font/salsa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
-    <EditText
-        android:id="@+id/txtclientdniadd"
-        android:layout_width="wrap_content"
-        android:layout_height="35sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtclientemailadd" />
+        <EditText
+            android:id="@+id/txtclientdniadd"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtclientemailadd" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="20dp"
-        android:text="Telefono"
-        android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        app:fontFamily="@font/salsa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-    <EditText
-        android:id="@+id/txtclientphoneadd"
-        android:layout_width="wrap_content"
-        android:layout_height="35sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:ems="10"
-        android:inputType="textPersonName|phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtclientdniadd" />
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="32dp"
+            android:text="Telefono"
+            android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:fontFamily="@font/salsa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-    <ImageButton
-        android:id="@+id/btnclientsave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/save"
-        android:text="Guardar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        <EditText
+            android:id="@+id/txtclientphoneadd"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:ems="10"
+            android:inputType="textPersonName|phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtclientdniadd" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="32dp"
+            android:text="Direccion"
+            android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:fontFamily="@font/salsa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <EditText
+            android:id="@+id/txtclientdirectionadd"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:ems="10"
+            android:inputType="textPersonName|phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtclientphoneadd" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="32dp"
+            android:text="Ciudad"
+            android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:fontFamily="@font/salsa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <EditText
+            android:id="@+id/txtclientcityadd"
+            android:layout_width="wrap_content"
+            android:layout_height="41dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:ems="10"
+            android:inputType="textPersonName|phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtclientdirectionadd" />
+
+        <ImageButton
+            android:id="@+id/btnclientsave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/save"
+            android:text="Guardar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtclientcityadd" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

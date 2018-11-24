@@ -29,11 +29,13 @@
         <activity android:name=".activities.serviceorder.ServiceOrdersActivity" />
         <activity android:name=".activities.serviceorder.ServiceOrderRegisterActivity" />
         <activity android:name=".activities.serviceorder.ServiceOrderEditActivity" />
-        <activity android:name=".activities.serviceorder.ServiceOrderDetailActivity"></activity>
+        <activity android:name=".activities.serviceorder.ServiceOrderDetailActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".activities.services.ServicesRegisterActivity"></activity>
     </application>
 
 </manifest>
