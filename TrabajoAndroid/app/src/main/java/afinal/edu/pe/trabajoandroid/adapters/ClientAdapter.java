@@ -24,7 +24,7 @@ public class ClientAdapter extends FirebaseListAdapter<Client> {
     private TextView _txtclientemail;
     private ImageButton _btnclientedit;
     private ImageButton _btnclientshow;
-    private Client c;
+
 
     public ClientAdapter(@NonNull AppCompatActivity context) {
         super(new FirebaseListOptions.Builder<Client>()
@@ -36,14 +36,14 @@ public class ClientAdapter extends FirebaseListAdapter<Client> {
     }
 
 
-    protected void populateView(View view, Client client, int i) {
+    protected void populateView(View view, final Client c, int i) {
         _txtclientname=view.findViewById(R.id.txtclientname);
         _txtclientname2=view.findViewById(R.id.txtclientname2);
         _txtclientemail=view.findViewById(R.id.txtclientemail);
         _btnclientedit=view.findViewById(R.id.btnclientedit);
         _btnclientshow=view.findViewById(R.id.btnclientshow);
 
-        c=client;
+
         _txtclientname.setText(c.getNombre());
         _txtclientname2.setText(c.getApellido());
         _txtclientemail.setText(c.getEmail());
@@ -51,7 +51,6 @@ public class ClientAdapter extends FirebaseListAdapter<Client> {
         _btnclientedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //context.startActivity(new Intent(context,ClientEditActivity.class));
                 Intent intent=new Intent(context,ClientEditActivity.class);
                 intent.putExtra("idcliente",c.getIdcliente());
                 context.startActivity(intent);
@@ -67,6 +66,8 @@ public class ClientAdapter extends FirebaseListAdapter<Client> {
 
             }
         });
+
+
     }
 
 
