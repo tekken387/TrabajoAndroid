@@ -3,7 +3,7 @@ package afinal.edu.pe.trabajoandroid.models;
 public class Service {
     private String idservicio;
     private String nombre;
-    private double precio;
+    private float precio;
 
     public String getIdservicio() {
         return idservicio;
@@ -22,11 +22,11 @@ public class Service {
     }
 
 
-    public double getPrecio() {
+    public float getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(float precio) {
         this.precio = precio;
     }
 }

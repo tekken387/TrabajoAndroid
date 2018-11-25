@@ -40,7 +40,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <EditText
-            android:id="@+id/txtservicenameadd"
+            android:id="@+id/txtclientnameadd"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:layout_marginTop="62dp"
@@ -52,7 +52,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/txtservicepriceadd"
+            android:id="@+id/txtclientnameadd2"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:layout_marginTop="8dp"
@@ -61,7 +61,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtservicenameadd" />
+            app:layout_constraintTop_toBottomOf="@+id/txtclientnameadd" />
 
         <TextView
             android:id="@+id/textView8"
@@ -108,7 +108,7 @@
             android:ems="10"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtservicepriceadd" />
+            app:layout_constraintTop_toBottomOf="@+id/txtclientnameadd2" />
 
         <TextView
             android:id="@+id/textView10"

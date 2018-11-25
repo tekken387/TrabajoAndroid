@@ -53,7 +53,7 @@ public class ClientDetailActivity extends AppCompatActivity implements View.OnCl
         DatabaseReference clientsRef = db.getReference("clientes/" + id);
 
         if(id != null) {
-           cargaDatos(id,clientsRef);
+           cargaDatos(clientsRef);
         }else{
             Toast.makeText(this,"Hubo un error al consultar cliente...",Toast.LENGTH_SHORT).show();
         }
@@ -67,7 +67,7 @@ public class ClientDetailActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
-    public void cargaDatos(String id,DatabaseReference clientsRef){
+    public void cargaDatos(DatabaseReference clientsRef){
 
         clientsRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -85,10 +85,5 @@ public class ClientDetailActivity extends AppCompatActivity implements View.OnCl
             }
         });
     }
-
-    public void cerrarActivity(){
-        this.finish();
-    }
-
 
 }
