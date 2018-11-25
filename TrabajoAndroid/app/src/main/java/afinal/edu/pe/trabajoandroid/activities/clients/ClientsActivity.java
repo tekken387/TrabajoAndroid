@@ -25,7 +25,7 @@ public class ClientsActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clients);
 
-        btnclientadd=findViewById(R.id.btnclientadd);
+        btnclientadd=findViewById(R.id.btnvehicleclientadd);
         lvclients=findViewById(R.id.lvclients);
         clientes=new ArrayList<>();
 
@@ -42,7 +42,7 @@ public class ClientsActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.btnclientadd){
+        if(v.getId()==R.id.btnvehicleclientadd){
             Intent intent=new Intent(this,ClientRegisterActivity.class);
             startActivity(intent);
         }

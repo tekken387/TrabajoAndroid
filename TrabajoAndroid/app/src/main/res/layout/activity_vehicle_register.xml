@@ -10,8 +10,8 @@
         android:id="@+id/btnvehicleadd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,7 @@
         android:layout_height="22dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="44dp"
         android:text="Tipo"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
@@ -47,7 +47,7 @@
         android:textStyle="bold"
         app:fontFamily="@font/salsa"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
     <TextView
         android:id="@+id/textView30"
@@ -55,7 +55,7 @@
         android:layout_height="20dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="44dp"
         android:text="Modelo"
         android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
         android:textColor="@color/colorPrimaryDark"
@@ -70,7 +70,7 @@
         android:layout_height="24dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="44dp"
         android:text="Marca"
         android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
         android:textColor="@color/colorPrimaryDark"
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:text="Placa"
         android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
         android:textColor="@color/colorPrimaryDark"
@@ -95,50 +95,87 @@
         app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
     <EditText
-        android:id="@+id/txtvehicletypeadd"
+        android:id="@+id/txtvehicletypeedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txtvechicleclientedit" />
 
     <EditText
-        android:id="@+id/txtvehiclemodeladd"
+        android:id="@+id/txtvehiclemodeledit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvehicletypeadd" />
+        app:layout_constraintTop_toBottomOf="@+id/txtvehicletypeedit" />
 
     <EditText
-        android:id="@+id/txtvehiclebrandadd"
+        android:id="@+id/txtvehiclebrandedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvehiclemodeladd" />
+        app:layout_constraintTop_toBottomOf="@+id/txtvehiclemodeledit" />
 
     <EditText
         android:id="@+id/txtvehicleplacaadd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvehiclebrandadd" />
+        app:layout_constraintTop_toBottomOf="@+id/txtvehiclebrandedit" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="92dp"
+        android:text="Cliente"
+        android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        app:fontFamily="@font/salsa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnvehicleclientadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/add" />
+
+    <AutoCompleteTextView
+        android:id="@+id/txtvechicleclientedit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
