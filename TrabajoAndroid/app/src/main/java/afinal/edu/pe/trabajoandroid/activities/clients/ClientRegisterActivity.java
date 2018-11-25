@@ -31,8 +31,8 @@ public class ClientRegisterActivity extends AppCompatActivity implements View.On
         _btnclientsave=findViewById(R.id.btnclientsave);
         _txtclientdniadd=findViewById(R.id.txtclientdniadd);
         _txtclientemailadd=findViewById(R.id.txtclientemailadd);
-        _txtclientnameadd=findViewById(R.id.txtservicenameadd);
-        _txtclientnameadd2=findViewById(R.id.txtservicepriceadd);
+        _txtclientnameadd=findViewById(R.id.txtclientnameadd);
+        _txtclientnameadd2=findViewById(R.id.txtclientnameadd2);
         _txtclientphoneadd=findViewById(R.id.txtclientphoneadd);
         _btnclientsave.setOnClickListener(this);
 

@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.vehicle.VehicleDetailActivity">
+    tools:context=".activities.vehicle.VehicleEditActivity">
 
     <ImageButton
-        android:id="@+id/btnbackshow"
+        android:id="@+id/btnvehicleedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
@@ -15,7 +15,7 @@
         android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/back" />
+        app:srcCompat="@drawable/save" />
 
     <TextView
         android:id="@+id/textView23"
@@ -23,8 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="28dp"
-        android:text="Detalles Vehiculo"
+        android:layout_marginTop="24dp"
+        android:text="Editar Vehiculo"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
@@ -94,13 +94,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
+    <EditText
+        android:id="@+id/txtvehicletypeedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtvechicleclientedit" />
+
+    <EditText
+        android:id="@+id/txtvehiclemodeledit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtvehicletypeedit" />
+
+    <EditText
+        android:id="@+id/txtvehiclebrandedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtvehiclemodeledit" />
+
+    <EditText
+        android:id="@+id/txtvehicleplacaedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtvehiclebrandedit" />
+
     <TextView
         android:id="@+id/textView35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="72dp"
         android:text="Cliente"
         android:textAppearance="@style/TextAppearance.Compat.Notification.Title.Media"
         android:textColor="@color/colorPrimaryDark"
@@ -109,59 +157,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtvehicleclientshow"
-        android:layout_width="190sp"
-        android:layout_height="40sp"
-        android:layout_marginTop="82dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="--------"
+    <AutoCompleteTextView
+        android:id="@+id/txtvechicleclientedit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtvehicletypeshow"
-        android:layout_width="190sp"
-        android:layout_height="40sp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="---------"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvehicleclientshow" />
-
-    <TextView
-        android:id="@+id/txtvehiclemodelshow"
-        android:layout_width="190sp"
-        android:layout_height="40sp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="--------"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvehicletypeshow" />
-
-    <TextView
-        android:id="@+id/txtvehiclebrandshow"
-        android:layout_width="190sp"
-        android:layout_height="40sp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="--------"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvehiclemodelshow" />
-
-    <TextView
-        android:id="@+id/txtvehicleplacashow"
-        android:layout_width="190sp"
-        android:layout_height="40sp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="--------"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvehiclebrandshow" />
 
 </android.support.constraint.ConstraintLayout>

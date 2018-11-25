@@ -26,8 +26,8 @@ public class ServiceRegisterActivity extends AppCompatActivity implements View.O
         setContentView(R.layout.activity_services_register);
 
         btnservicesave=findViewById(R.id.btnservicesave);
-        txtservicenameadd=findViewById(R.id.txtservicenameadd);
-        txtservicepriceadd=findViewById(R.id.txtservicepriceadd);
+        txtservicenameadd=findViewById(R.id.txtclientnameadd);
+        txtservicepriceadd=findViewById(R.id.txtclientnameadd2);
         btnservicesave.setOnClickListener(this);
     }
 
