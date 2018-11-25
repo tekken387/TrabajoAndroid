@@ -8,7 +8,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,7 +17,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 import afinal.edu.pe.trabajoandroid.R;
-import afinal.edu.pe.trabajoandroid.models.Client;
 import afinal.edu.pe.trabajoandroid.models.Service;
 
 public class ServiceEditActivity extends AppCompatActivity implements View.OnClickListener{
@@ -36,7 +34,7 @@ public class ServiceEditActivity extends AppCompatActivity implements View.OnCli
 
         txtservicenameedit=findViewById(R.id.txtservicenameedit);
         txtservicepriceedit=findViewById(R.id.txtservicepriceedit);
-        btnserviceedit=findViewById(R.id.btnserviceedit);
+        btnserviceedit=findViewById(R.id.btnclientedit);
         btnserviceedit.setOnClickListener(this);
 
         Bundle extras = getIntent().getExtras();
