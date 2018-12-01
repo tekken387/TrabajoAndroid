@@ -57,7 +57,7 @@ public class ServiceDetailActivity extends AppCompatActivity implements View.OnC
     }
         @Override
         public void onClick(View v) {
-            if(v.getId()==R.id.btnbackshow){
+            if(v.getId()==R.id.btnservicebackshow){
                 this.finish();
             }
         }

@@ -88,6 +88,8 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         DatabaseReference clientsRef = db.getReference("clientes/");
+        DatabaseReference clientsRef1 = db.getReference("vehiculos/cliente/"+id);
+        //falta verificar como poder actualizar el cliente en distintos nodos
 
         Client cliente=new Client();
         cliente.setIdcliente(id);
@@ -101,6 +103,7 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
         map.put(id,cliente);
 
         clientsRef.updateChildren(map);
+        clientsRef1.updateChildren(map);
         Toast.makeText(this,"Se actualizó correctamente...",Toast.LENGTH_SHORT).show();
         cerrarActivity();
     }
