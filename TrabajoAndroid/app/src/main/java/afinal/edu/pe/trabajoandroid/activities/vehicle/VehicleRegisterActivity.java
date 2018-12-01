@@ -1,17 +1,21 @@
 package afinal.edu.pe.trabajoandroid.activities.vehicle;
 
 import android.app.Activity;
+import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,8 +30,9 @@ import java.util.List;
 import afinal.edu.pe.trabajoandroid.R;
 import afinal.edu.pe.trabajoandroid.models.Client;
 import afinal.edu.pe.trabajoandroid.models.Vehicle;
+import afinal.edu.pe.trabajoandroid.util.FinalSharedPreferences;
 
-public class VehicleRegisterActivity extends AppCompatActivity implements View.OnClickListener, TextWatcher {
+public class VehicleRegisterActivity extends AppCompatActivity implements View.OnClickListener, TextWatcher, AdapterView.OnItemClickListener {
 
     ImageButton btnvehicleclientadd;
     ImageButton btnvehiclesaveadd;
@@ -37,6 +42,8 @@ public class VehicleRegisterActivity extends AppCompatActivity implements View.O
     TextView txtvehiclebrandadd;
     TextView txtvehicleplacaadd;
     FirebaseDatabase database;
+    FinalSharedPreferences sp;
+    Client client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +60,17 @@ public class VehicleRegisterActivity extends AppCompatActivity implements View.O
         btnvehiclesaveadd.setOnClickListener(this);
         btnvehicleclientadd.setOnClickListener(this);
         txtvehicleclientadd.addTextChangedListener(this);
+        txtvehicleclientadd.setOnItemClickListener(this);
+        client=null;
 
+        sp=new FinalSharedPreferences(this);
+
+        txtvehicleclientadd.setThreshold(1);
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.btnclientsaveadd){
+        if(v.getId()==R.id.btnvehiclesaveadd){
             database = FirebaseDatabase.getInstance();
             DatabaseReference vehiculosRef = database.getReference("vehiculos");
             DatabaseReference vehiculoActualRef = vehiculosRef.push();
@@ -69,12 +81,17 @@ public class VehicleRegisterActivity extends AppCompatActivity implements View.O
             ve.setModelo(txtvehiclemodeladd.getText().toString());
             ve.setPlaca(txtvehicleplacaadd.getText().toString());
             ve.setTipo(txtvehicletypeadd.getText().toString());
-            Client client=new Client();
-            ve.setCliente(client);
+            if(client!=null){
+                ve.setCliente(client);
+                vehiculosRef.child(vehiculoActualRef.getKey()).setValue(ve);
+                limpiar();
+            }else{
+                Toast.makeText(this,"Hubo un error al agregar cliente...",Toast.LENGTH_SHORT).show();
+                return;
+            }
 
-            vehiculosRef.child(vehiculoActualRef.getKey()).setValue(ve);
 
-            limpiar();
+
         }
     }
 
@@ -86,32 +103,29 @@ public class VehicleRegisterActivity extends AppCompatActivity implements View.O
         txtvehicleclientadd.setText("");
     }
 
-    public void BuscaCliente(final String nombre) {
+    @SuppressWarnings("unchecked")
+    public void BuscaCliente(final String documento) {
 
-        final  ArrayList<String> sug = new ArrayList<>();
+        final  ArrayList<Client> sug = new ArrayList<>();
 
-        Query referencias =  FirebaseDatabase.getInstance().getReference("clientes").child("documento").orderByKey().startAt(nombre).endAt((nombre)+ "\uf8ff");
+
+        Query referencias =  FirebaseDatabase.getInstance().getReference("clientes").orderByChild("documento").startAt(documento).endAt((documento)+ "\uf8ff");
         //database = FirebaseDatabase.getInstance();
-        referencias.addListenerForSingleValueEvent(new ValueEventListener() {
+        referencias.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-
-                if (dataSnapshot != null) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                     for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                        String name = (String) ds.getKey();
-                        sug.add(name);
+                        Client cliente = ds.getValue(Client.class);
+                        sug.add(cliente);
                     }
 
-                    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(VehicleRegisterActivity.this, android.R.layout.select_dialog_item, sug);
+                    ArrayAdapter<Client> arrayAdapter = new ArrayAdapter<>(VehicleRegisterActivity.this, android.R.layout.simple_list_item_1, sug);
                     txtvehicleclientadd.setAdapter(arrayAdapter);
-                }
-
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
@@ -128,16 +142,23 @@ public class VehicleRegisterActivity extends AppCompatActivity implements View.O
     public void onTextChanged(CharSequence s, int start, int before, int count) {
 
         //This is where I do the filtering as the user types
-
-
         if (!TextUtils.isEmpty(s.subSequence(0, s.length()).toString())) {
-            BuscaCliente((s.subSequence(0, s.length())).toString());
+            BuscaCliente((s.subSequence(0, s.length()).toString()));
         }
     }
 
 
     @Override
     public void afterTextChanged(Editable s) {
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//        String ci = (ContactInfo)parent.getItemAtPosition(position);
+//        editNumber.setText(ci.Number);
+
+        client=(Client)parent.getAdapter().getItem(position);
 
     }
 }
