@@ -28,20 +28,20 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
     EditText txtclientdniedit;
     EditText txtclientemailedit;
     EditText txtclientphoneedit;
-    ImageButton btnsaveedit;
+    ImageButton btnclientsaveedit;
     String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_edit);
-        txtclientnameedit=findViewById(R.id.txtservicenameedit);
-        txtclientname2edit=findViewById(R.id.txtservicepriceedit);
+        txtclientnameedit=findViewById(R.id.txtclientnameedit);
+        txtclientname2edit=findViewById(R.id.txtclientname2edit);
         txtclientdniedit=findViewById(R.id.txtclientdniedit);
         txtclientemailedit=findViewById(R.id.txtclientemailedit);
         txtclientphoneedit=findViewById(R.id.txtclientphoneedit);
-        btnsaveedit=findViewById(R.id.btnsaveedit);
-        btnsaveedit.setOnClickListener(this);
+        btnclientsaveedit=findViewById(R.id.btnclientsaveedit);
+        btnclientsaveedit.setOnClickListener(this);
 
         Bundle extras = getIntent().getExtras();
 

@@ -220,7 +220,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtclientdirectionadd" />
 
         <ImageButton
-            android:id="@+id/btnclientsave"
+            android:id="@+id/btnclientaddsave2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"

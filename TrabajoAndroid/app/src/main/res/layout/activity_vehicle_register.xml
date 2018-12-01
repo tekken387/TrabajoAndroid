@@ -7,7 +7,7 @@
     tools:context=".activities.vehicle.VehicleRegisterActivity">
 
     <ImageButton
-        android:id="@+id/btnvehicleadd"
+        android:id="@+id/btnvehiclesaveadd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
@@ -95,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
     <EditText
-        android:id="@+id/txtvehicletypeedit"
+        android:id="@+id/txtvehicletypeadd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -104,10 +104,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvechicleclientedit" />
+        app:layout_constraintTop_toBottomOf="@+id/txtvehicleclientadd" />
 
     <EditText
-        android:id="@+id/txtvehiclemodeledit"
+        android:id="@+id/txtvehiclemodeladd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -116,10 +116,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvehicletypeedit" />
+        app:layout_constraintTop_toBottomOf="@+id/txtvehicletypeadd" />
 
     <EditText
-        android:id="@+id/txtvehiclebrandedit"
+        android:id="@+id/txtvehiclebrandadd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -128,7 +128,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvehiclemodeledit" />
+        app:layout_constraintTop_toBottomOf="@+id/txtvehiclemodeladd" />
 
     <EditText
         android:id="@+id/txtvehicleplacaadd"
@@ -140,7 +140,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvehiclebrandedit" />
+        app:layout_constraintTop_toBottomOf="@+id/txtvehiclebrandadd" />
 
     <TextView
         android:id="@+id/textView35"
@@ -169,7 +169,7 @@
         app:srcCompat="@drawable/add" />
 
     <AutoCompleteTextView
-        android:id="@+id/txtvechicleclientedit"
+        android:id="@+id/txtvehicleclientadd"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="82dp"

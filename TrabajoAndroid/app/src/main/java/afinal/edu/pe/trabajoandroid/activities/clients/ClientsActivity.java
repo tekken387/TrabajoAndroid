@@ -18,18 +18,18 @@ public class ClientsActivity extends AppCompatActivity implements View.OnClickLi
 
     ListView lvclients;
     ArrayList<Client> clientes;
-    ImageButton btnclientadd;
+    ImageButton btnclientsadd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clients);
 
-        btnclientadd=findViewById(R.id.btnvehicleclientadd);
+        btnclientsadd=findViewById(R.id.btnclientsadd);
         lvclients=findViewById(R.id.lvclients);
         clientes=new ArrayList<>();
 
-        btnclientadd.setOnClickListener(this);
+        btnclientsadd.setOnClickListener(this);
         cargaDatos();
 
     }
@@ -42,7 +42,7 @@ public class ClientsActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.btnvehicleclientadd){
+        if(v.getId()==R.id.btnclientsadd){
             Intent intent=new Intent(this,ClientRegisterActivity.class);
             startActivity(intent);
         }

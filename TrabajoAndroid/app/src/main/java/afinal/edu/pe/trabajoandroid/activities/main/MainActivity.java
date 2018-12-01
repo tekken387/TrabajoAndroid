@@ -14,15 +14,17 @@ import afinal.edu.pe.trabajoandroid.activities.clients.ClientsActivity;
 import afinal.edu.pe.trabajoandroid.activities.serviceorder.ServiceOrdersActivity;
 import afinal.edu.pe.trabajoandroid.activities.services.ServicesActivity;
 import afinal.edu.pe.trabajoandroid.R;
+import afinal.edu.pe.trabajoandroid.activities.vehicle.VehiclesActivity;
 import afinal.edu.pe.trabajoandroid.util.FinalSharedPreferences;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     FinalSharedPreferences prefs;
-    ImageButton _btnlogout;
-    ImageButton _btnclients;
-    ImageButton _btnos;
-    ImageButton _btnservices;
+    ImageButton btnlogout;
+    ImageButton btnclients;
+    ImageButton btnos;
+    ImageButton btnservices;
+    ImageButton btnvehicles;
     FirebaseUser user;
     FirebaseAuth auth;
 
@@ -33,15 +35,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         prefs=new FinalSharedPreferences(this);
 
-        _btnclients=findViewById(R.id.btnclients);
-        _btnos=findViewById(R.id.btnos);
-        _btnservices=findViewById(R.id.btnservices);
-        _btnlogout=findViewById(R.id.btnLogout);
+        btnclients=findViewById(R.id.btnclients);
+        btnos=findViewById(R.id.btnos);
+        btnservices=findViewById(R.id.btnservices);
+        btnvehicles=findViewById(R.id.btnvehicles);
+        btnlogout=findViewById(R.id.btnLogout);
 
-        _btnlogout.setOnClickListener(this);
-        _btnclients.setOnClickListener(this);
-        _btnos.setOnClickListener(this);
-        _btnservices.setOnClickListener(this);
+        btnlogout.setOnClickListener(this);
+        btnclients.setOnClickListener(this);
+        btnos.setOnClickListener(this);
+        btnservices.setOnClickListener(this);
+        btnvehicles.setOnClickListener(this);
 
         auth = auth.getInstance();
         user=auth.getCurrentUser();
@@ -82,6 +86,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnos:
                 intent=new Intent(this,ServiceOrdersActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnvehicles:
+                intent=new Intent(this,VehiclesActivity.class);
                 startActivity(intent);
                 break;
         }

@@ -40,7 +40,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtservicenameedit"
+        android:id="@+id/txtclientnameedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
     <EditText
-        android:id="@+id/txtservicepriceedit"
+        android:id="@+id/txtclientname2edit"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
@@ -76,7 +76,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtservicenameedit" />
+        app:layout_constraintTop_toBottomOf="@+id/txtclientnameedit" />
 
     <TextView
         android:id="@+id/textView26"
@@ -103,7 +103,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtservicepriceedit" />
+        app:layout_constraintTop_toBottomOf="@+id/txtclientname2edit" />
 
     <TextView
         android:id="@+id/textView27"
@@ -214,7 +214,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtclientdirectionedit" />
 
     <ImageButton
-        android:id="@+id/btnsaveedit"
+        android:id="@+id/btnclientsaveedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
