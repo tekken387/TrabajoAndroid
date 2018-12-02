@@ -259,5 +259,14 @@
     | Modificación de OS | 8     | NO     |
     | Facturación de OS | 6     | NO     |
     | Consulta de OS     | 5     | NO     |
-    | Registro datos de clientes     | 3     | NO     |
-    | Modificación datos de clientes     | 3     | NO     |
+    | Registro datos de clientes     | 3     | SI     |
+    | Modificación datos de clientes     | 3     | SI     |
+    | Visualización datos de clientes    | 3     | SI     |
+    | Registro datos de servicios     | 6    | SI     |
+    | Modificación datos de servicios     | 5    | SI     |
+    | Visualización datos de servicios     | 3     | SI     |
+    | Registro datos de vehículos     | 5    | SI     |
+    |Modificación datos de vehículos     | 5     | SI     |
+    |Visualización datos de vehículos     | 3     | SI     |
+    |Logout    | 3     | SI     |
+    
