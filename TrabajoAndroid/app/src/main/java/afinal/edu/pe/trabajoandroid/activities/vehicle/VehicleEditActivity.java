@@ -144,8 +144,7 @@ public class VehicleEditActivity extends AppCompatActivity implements View.OnCli
         ve.setPlaca(txtvehicleplacaedit.getText().toString());
         ve.setModelo(txtvehiclemodeledit.getText().toString());
         ve.setMarca(txtvehiclebrandedit.getText().toString());
-        Client client=new Client();
-        ve.setCliente(client);
+
 
         HashMap map = new HashMap();
         map.put(id,ve);
