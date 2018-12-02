@@ -7,40 +7,29 @@
     tools:layout_editor_absoluteY="81dp">
 
     <TextView
-        android:id="@+id/txtclientname"
-        android:layout_width="86dp"
-        android:layout_height="27dp"
+        android:id="@+id/txtvehicletype"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="28dp"
-        android:text="Nombre"
+        android:text="Tipo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtclientname2"
-        android:layout_width="98dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="28dp"
-        android:text="Apellido"
-        app:layout_constraintStart_toEndOf="@+id/txtclientname"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtclientemail"
-        android:layout_width="191dp"
+        android:id="@+id/txtvehiclebrand"
+        android:layout_width="90dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="84dp"
-        android:text="Email"
+        android:layout_marginTop="72dp"
+        android:text="Marca"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/btnclientedit"
+        android:id="@+id/btnvehicleedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -51,13 +40,36 @@
         app:srcCompat="@drawable/edit1" />
 
     <ImageButton
-        android:id="@+id/btnclientshow"
+        android:id="@+id/btnvehicleshow"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnclientedit"
+        app:layout_constraintTop_toBottomOf="@+id/btnvehicleedit"
         app:srcCompat="@drawable/see1" />
+
+    <TextView
+        android:id="@+id/txtvehiclemodel"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="28dp"
+        android:autoText="false"
+        android:text="Modelo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtvehicleplaca"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="72dp"
+        android:text="Placa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -14,12 +14,12 @@ import afinal.edu.pe.trabajoandroid.R;
 
 public class ClientRegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton _btnclientsave;
-    TextView _txtclientnameadd;
-    TextView _txtclientnameadd2;
-    TextView _txtclientemailadd;
-    TextView _txtclientdniadd;
-    TextView _txtclientphoneadd;
+    ImageButton btnclientsaveadd;
+    TextView txtclientnameadd;
+    TextView txtclientname2add;
+    TextView txtclientemailadd;
+    TextView txtclientdniadd;
+    TextView txtclientphoneadd;
     FirebaseDatabase database;
 
 
@@ -28,30 +28,30 @@ public class ClientRegisterActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_register);
 
-        _btnclientsave=findViewById(R.id.btnclientsave);
-        _txtclientdniadd=findViewById(R.id.txtclientdniadd);
-        _txtclientemailadd=findViewById(R.id.txtclientemailadd);
-        _txtclientnameadd=findViewById(R.id.txtclientnameadd);
-        _txtclientnameadd2=findViewById(R.id.txtclientnameadd2);
-        _txtclientphoneadd=findViewById(R.id.txtclientphoneadd);
-        _btnclientsave.setOnClickListener(this);
+        btnclientsaveadd=findViewById(R.id.btnclientsaveadd);
+        txtclientdniadd=findViewById(R.id.txtclientdniadd);
+        txtclientemailadd=findViewById(R.id.txtclientemailadd);
+        txtclientnameadd=findViewById(R.id.txtclientnameadd);
+        txtclientname2add=findViewById(R.id.txtclientname2add);
+        txtclientphoneadd=findViewById(R.id.txtclientphoneadd);
+        btnclientsaveadd.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.btnclientsave){
+        if(v.getId()==R.id.btnclientsaveadd){
             database = FirebaseDatabase.getInstance();
             DatabaseReference clientsRef = database.getReference("clientes");
             DatabaseReference clientActualRef = clientsRef.push();
 
             Client cliente=new Client();
             cliente.setIdcliente(clientActualRef.getKey());
-            cliente.setNombre(_txtclientnameadd.getText().toString());
-            cliente.setApellido(_txtclientnameadd2.getText().toString());
-            cliente.setDocumento(_txtclientdniadd.getText().toString());
-            cliente.setEmail(_txtclientemailadd.getText().toString());
-            cliente.setTelefono(_txtclientphoneadd.getText().toString());
+            cliente.setNombre(txtclientnameadd.getText().toString());
+            cliente.setApellido(txtclientname2add.getText().toString());
+            cliente.setDocumento(txtclientdniadd.getText().toString());
+            cliente.setEmail(txtclientemailadd.getText().toString());
+            cliente.setTelefono(txtclientphoneadd.getText().toString());
 
             clientsRef.child(clientActualRef.getKey()).setValue(cliente);
 
@@ -60,10 +60,10 @@ public class ClientRegisterActivity extends AppCompatActivity implements View.On
     }
 
     public void limpiar(){
-        _txtclientemailadd.setText("");
-        _txtclientdniadd.setText("");
-        _txtclientnameadd.setText("");
-        _txtclientnameadd2.setText("");
-        _txtclientphoneadd.setText("");
+        txtclientemailadd.setText("");
+        txtclientdniadd.setText("");
+        txtclientnameadd.setText("");
+        txtclientname2add.setText("");
+        txtclientphoneadd.setText("");
     }
 }

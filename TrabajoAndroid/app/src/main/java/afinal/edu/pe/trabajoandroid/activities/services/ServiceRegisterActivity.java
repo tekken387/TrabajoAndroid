@@ -41,7 +41,7 @@ public class ServiceRegisterActivity extends AppCompatActivity implements View.O
             Service servicio=new Service();
             servicio.setIdservicio(serviceActualRef.getKey());
             servicio.setNombre(txtservicenameadd.getText().toString());
-            servicio.setPrecio(Double.valueOf(txtservicepriceadd.getText().toString()));
+            servicio.setPrecio(Float.valueOf(txtservicepriceadd.getText().toString()));
 
             serviceRef.child(serviceActualRef.getKey()).setValue(servicio);
 

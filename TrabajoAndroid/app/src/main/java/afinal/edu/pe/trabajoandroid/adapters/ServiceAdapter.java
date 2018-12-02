@@ -38,7 +38,7 @@ public class ServiceAdapter extends FirebaseListAdapter<Service> {
 
     protected void populateView(View view, final Service s, int i) {
         txtservicename=view.findViewById(R.id.txtservicename);
-        txtserviceprice=view.findViewById(R.id.txtclientname2);
+        txtserviceprice=view.findViewById(R.id.txtserviceprice);
         btnserviceedit=view.findViewById(R.id.btnserviceedit);
         btnserviceshow=view.findViewById(R.id.btnserviceshow);
 

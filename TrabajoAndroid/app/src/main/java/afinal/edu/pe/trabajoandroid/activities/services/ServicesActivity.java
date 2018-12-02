@@ -10,8 +10,6 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import afinal.edu.pe.trabajoandroid.R;
-import afinal.edu.pe.trabajoandroid.activities.clients.ClientRegisterActivity;
-import afinal.edu.pe.trabajoandroid.adapters.ClientAdapter;
 import afinal.edu.pe.trabajoandroid.adapters.ServiceAdapter;
 import afinal.edu.pe.trabajoandroid.models.Service;
 
@@ -27,7 +25,7 @@ public class ServicesActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_services);
 
         btnservicesadd=findViewById(R.id.btnservicesadd);
-        lvservices=findViewById(R.id.lvservices);
+        lvservices=findViewById(R.id.lvvehicles);
         servicios=new ArrayList<>();
 
         btnservicesadd.setOnClickListener(this);

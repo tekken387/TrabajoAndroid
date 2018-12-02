@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -17,7 +16,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import afinal.edu.pe.trabajoandroid.R;
 import afinal.edu.pe.trabajoandroid.models.Client;
@@ -25,13 +23,12 @@ import afinal.edu.pe.trabajoandroid.models.Client;
 public class ClientEditActivity extends AppCompatActivity implements View.OnClickListener {
 
     FirebaseDatabase db;
-    FirebaseAuth auth;
     EditText txtclientnameedit;
     EditText txtclientname2edit;
     EditText txtclientdniedit;
     EditText txtclientemailedit;
     EditText txtclientphoneedit;
-    ImageButton btnsaveedit;
+    ImageButton btnclientsaveedit;
     String id;
 
     @Override
@@ -43,8 +40,8 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
         txtclientdniedit=findViewById(R.id.txtclientdniedit);
         txtclientemailedit=findViewById(R.id.txtclientemailedit);
         txtclientphoneedit=findViewById(R.id.txtclientphoneedit);
-        btnsaveedit=findViewById(R.id.btnsaveedit);
-        btnsaveedit.setOnClickListener(this);
+        btnclientsaveedit=findViewById(R.id.btnclientsaveedit);
+        btnclientsaveedit.setOnClickListener(this);
 
         Bundle extras = getIntent().getExtras();
 
@@ -58,7 +55,7 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
         DatabaseReference clientsRef = db.getReference("clientes/" + id);
 
         if(id != null) {
-            cargaDatos(id, clientsRef);
+            cargaDatos(clientsRef);
         }else{
             Toast.makeText(this,"Hubo un error al consultar cliente...",Toast.LENGTH_SHORT).show();
         }
@@ -68,7 +65,7 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
         this.finish();
     }
 
-    public void cargaDatos(String id,DatabaseReference clientsRef){
+    public void cargaDatos(DatabaseReference clientsRef){
 
         clientsRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -91,6 +88,8 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         DatabaseReference clientsRef = db.getReference("clientes/");
+        DatabaseReference clientsRef1 = db.getReference("vehiculos/cliente/"+id);
+        //falta verificar como poder actualizar el cliente en distintos nodos
 
         Client cliente=new Client();
         cliente.setIdcliente(id);
@@ -104,6 +103,7 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
         map.put(id,cliente);
 
         clientsRef.updateChildren(map);
+        clientsRef1.updateChildren(map);
         Toast.makeText(this,"Se actualizó correctamente...",Toast.LENGTH_SHORT).show();
         cerrarActivity();
     }

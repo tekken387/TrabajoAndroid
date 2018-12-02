@@ -37,10 +37,10 @@ public class ClientAdapter extends FirebaseListAdapter<Client> {
 
 
     protected void populateView(View view, final Client c, int i) {
-        _txtclientname=view.findViewById(R.id.txtservicename);
+        _txtclientname=view.findViewById(R.id.txtclientname);
         _txtclientname2=view.findViewById(R.id.txtclientname2);
         _txtclientemail=view.findViewById(R.id.txtclientemail);
-        _btnclientedit=view.findViewById(R.id.btnserviceedit);
+        _btnclientedit=view.findViewById(R.id.btnclientedit);
         _btnclientshow=view.findViewById(R.id.btnclientshow);
 
 
