@@ -116,6 +116,7 @@
         android:layout_marginTop="82dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:maxLines="1"
         android:text="--------"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -127,6 +128,8 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:inputType="text"
+        android:maxLines="1"
         android:text="---------"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtvehicleclientshow" />
@@ -138,6 +141,8 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:inputType="text"
+        android:maxLines="1"
         android:text="--------"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtvehicletypeshow" />
@@ -149,6 +154,8 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:inputType="text"
+        android:maxLines="1"
         android:text="--------"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtvehiclemodelshow" />
@@ -160,6 +167,9 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:inputType="text"
+        android:maxLength="6"
+        android:maxLines="1"
         android:text="--------"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtvehiclebrandshow" />

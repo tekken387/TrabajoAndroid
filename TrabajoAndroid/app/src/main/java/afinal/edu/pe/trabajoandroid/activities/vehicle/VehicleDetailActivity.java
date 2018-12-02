@@ -49,7 +49,6 @@ public class VehicleDetailActivity extends AppCompatActivity implements View.OnC
 
         btnvehiclebackshow.setOnClickListener(this);
 
-        client=null;
         Bundle extras = getIntent().getExtras();
 
         if(extras == null) {
@@ -69,34 +68,23 @@ public class VehicleDetailActivity extends AppCompatActivity implements View.OnC
     }
 
     private void cargaDatos(DatabaseReference vehiclesRef) {
-        try {
-            vehiclesRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    Vehicle ve = dataSnapshot.getValue(Vehicle.class);
-                    txtvehiclebrandshow.setText(ve.getMarca());
-                    txtvehiclemodelshow.setText(ve.getModelo());
-                    txtvehicleplacashow.setText(ve.getPlaca());
-                    txtvehicletypeshow.setText(ve.getTipo());
+        vehiclesRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Vehicle ve = dataSnapshot.getValue(Vehicle.class);
+                txtvehiclebrandshow.setText(ve.getMarca());
+                txtvehicleclientshow.setText(ve.getCliente().toString());
+                txtvehiclemodelshow.setText(ve.getModelo());
+                txtvehicleplacashow.setText(ve.getPlaca());
+                txtvehicletypeshow.setText(ve.getTipo());
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    DataSnapshot ds = dataSnapshot.child("cliente");
-                    Iterable<DataSnapshot> dslist = ds.getChildren();
-                    for (DataSnapshot d : dslist) {
-                        client = d.getValue(Client.class);
-                    }
-                    txtvehicleclientshow.setText(client.getNombre() + " " + client.getApellido());
+            }
+        });
 
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
-        }catch(Exception ex){
-            Toast.makeText(VehicleDetailActivity.this,ex.getMessage(),Toast.LENGTH_SHORT).show();
-            return;
-        }
     }
 
 
