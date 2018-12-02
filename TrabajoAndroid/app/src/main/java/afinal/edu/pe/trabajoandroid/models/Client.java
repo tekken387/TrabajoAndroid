@@ -8,16 +8,20 @@ public class Client {
     private String documento;
     private String telefono;
     private String email;
+    private String direccion;
+    private String ciudad;
 
     public Client(){}
 
-    public Client(String idcliente, String nombre, String apellido, String documento, String telefono, String email) {
+    public Client(String idcliente, String nombre, String apellido, String documento, String telefono, String email, String direccion,String ciudad) {
         this.idcliente = idcliente;
         this.nombre = nombre;
         this.apellido = apellido;
         this.documento = documento;
         this.telefono = telefono;
         this.email = email;
+        this.direccion=direccion;
+        this.ciudad=ciudad;
     }
 
     public String getIdcliente() {
@@ -71,5 +75,21 @@ public class Client {
     @Override
     public String toString() {
         return nombre+" - "+documento;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 }

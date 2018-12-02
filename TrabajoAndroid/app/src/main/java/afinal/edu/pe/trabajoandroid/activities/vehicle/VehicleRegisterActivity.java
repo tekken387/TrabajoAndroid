@@ -111,29 +111,34 @@ public class VehicleRegisterActivity extends AppCompatActivity implements View.O
     @SuppressWarnings("unchecked")
     public void BuscaCliente(final String documento) {
 
-        final  ArrayList<Client> sug = new ArrayList<>();
+        try {
+            final ArrayList<Client> sug = new ArrayList<>();
 
 
-        Query referencias =  FirebaseDatabase.getInstance().getReference("clientes").orderByChild("documento").startAt(documento).endAt((documento)+ "\uf8ff");
+            Query referencias = FirebaseDatabase.getInstance().getReference("clientes").orderByChild("documento").startAt(documento).endAt((documento) + "\uf8ff");
 
-        referencias.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            referencias.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         Client cliente = ds.getValue(Client.class);
                         sug.add(cliente);
                     }
 
                     ArrayAdapter<Client> arrayAdapter = new ArrayAdapter<>(VehicleRegisterActivity.this, android.R.layout.simple_list_item_1, sug);
                     txtvehicleclientadd.setAdapter(arrayAdapter);
-            }
+                }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            }
-        });
+                }
+            });
+        }catch(Exception ex){
+            Toast.makeText(this, ex.getMessage(), Toast.LENGTH_SHORT).show();
+            return;
+        }
 
     }
 

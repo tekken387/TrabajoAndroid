@@ -23,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import afinal.edu.pe.trabajoandroid.R;
 import afinal.edu.pe.trabajoandroid.models.Client;
@@ -136,7 +137,7 @@ public class VehicleEditActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        DatabaseReference vehicleRef = db.getReference("vehiculos/");
+        DatabaseReference vehicleRef = db.getReference("vehiculos");
 
         Vehicle ve=new Vehicle();
         ve.setIdvehiculo(id);
@@ -144,15 +145,16 @@ public class VehicleEditActivity extends AppCompatActivity implements View.OnCli
         ve.setPlaca(txtvehicleplacaedit.getText().toString());
         ve.setModelo(txtvehiclemodeledit.getText().toString());
         ve.setMarca(txtvehiclebrandedit.getText().toString());
+        //ve.setCliente(client);
 
-
-        HashMap map = new HashMap();
+        Map<String,Object> map = new HashMap();
         map.put(id,ve);
-        map.put("vehiculos/"+id+"/cliente/"+client.getIdcliente(),client);
+        map.put(id+"/cliente/"+client.getIdcliente(),client);
 
         vehicleRef.updateChildren(map);
         Toast.makeText(this,"Se actualizó correctamente...",Toast.LENGTH_SHORT).show();
         this.finish();
+
     }
 
     @Override

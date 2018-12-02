@@ -4,6 +4,7 @@ public class Service {
     private String idservicio;
     private String nombre;
     private float precio;
+    private String descripcion;
 
     public String getIdservicio() {
         return idservicio;
@@ -28,5 +29,13 @@ public class Service {
 
     public void setPrecio(float precio) {
         this.precio = precio;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
