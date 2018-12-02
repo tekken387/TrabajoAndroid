@@ -87,7 +87,6 @@ public class VehicleRegisterActivity extends AppCompatActivity implements View.O
 
                     vehiculosRef.child(vehiculoActualRef.getKey()).setValue(ve);
                     vehiculosRef.child(vehiculoActualRef.getKey()).child("cliente").child(client.getIdcliente()).setValue(client);
-                    limpiar();
                     this.finish();
                 } else {
                     Toast.makeText(this, "Hubo un error al agregar cliente...", Toast.LENGTH_SHORT).show();

@@ -45,7 +45,7 @@ public class ServiceRegisterActivity extends AppCompatActivity implements View.O
 
             serviceRef.child(serviceActualRef.getKey()).setValue(servicio);
 
-            limpiar();
+            this.finish();
         }
     }
 

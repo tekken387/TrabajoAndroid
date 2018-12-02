@@ -55,9 +55,6 @@ public class ServiceEditActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
-    public void cerrarActivity(){
-        this.finish();
-    }
 
     public void cargaDatos(DatabaseReference serviceRef){
 
@@ -90,6 +87,6 @@ public class ServiceEditActivity extends AppCompatActivity implements View.OnCli
 
         serviceRef.updateChildren(map);
         Toast.makeText(this,"Se actualizó correctamente...",Toast.LENGTH_SHORT).show();
-        cerrarActivity();
+        this.finish();
     }
 }
