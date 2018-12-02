@@ -13,9 +13,10 @@ public class OS {
     private String observacion;
     private float adelantoPago;
     private int estado;
+    private String nroOS;
 
     public OS(){
-        
+
     }
 
     public int getIdOS() {
@@ -88,5 +89,13 @@ public class OS {
 
     public void setEstado(int estado) {
         this.estado = estado;
+    }
+
+    public String getNroOS() {
+        return nroOS;
+    }
+
+    public void setNroOS(String nroOS) {
+        this.nroOS = nroOS;
     }
 }

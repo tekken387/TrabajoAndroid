@@ -57,7 +57,7 @@
         app:srcCompat="@drawable/edit1" />
 
     <ImageButton
-        android:id="@+id/btnoshow"
+        android:id="@+id/btnosshow"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginEnd="32dp"

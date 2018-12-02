@@ -20,10 +20,11 @@ import afinal.edu.pe.trabajoandroid.models.OS;
 public class OSAdapter  extends FirebaseListAdapter<OS> {
 
     private Context context;
-    private TextView txtservicename;
-    private TextView txtserviceprice;
-    private ImageButton btnserviceedit;
-    private ImageButton btnserviceshow;
+    private TextView txtosnumber;
+    private TextView txtostotal;
+    private TextView txtosclient;
+    private ImageButton btnosedit;
+    private ImageButton btnosshow;
 
 
     public OSAdapter(@NonNull AppCompatActivity context) {
@@ -37,10 +38,12 @@ public class OSAdapter  extends FirebaseListAdapter<OS> {
 
 
     protected void populateView(View view, final OS s, int i) {
-        txtservicename=view.findViewById(R.id.txtservicename);
-        txtserviceprice=view.findViewById(R.id.txtserviceprice);
-        btnserviceedit=view.findViewById(R.id.btnserviceedit);
-        btnserviceshow=view.findViewById(R.id.btnserviceshow);
+        txtosnumber=view.findViewById(R.id.txtosnumber);
+        txtostotal=view.findViewById(R.id.txtostotal);
+        txtosclient=view.findViewById(R.id.txtosclient);
+        btnosedit=view.findViewById(R.id.btnosedit);
+        btnosshow=view.findViewById(R.id.btnosshow);
+
 
 //        txtservicename.setText(s.getNombre());
 //        txtserviceprice.setText(String.valueOf(s.getPrecio()));
