@@ -7,7 +7,7 @@
     tools:context=".activities.services.ServiceRegisterActivity">
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/txtservicedescadd"
         android:layout_width="195dp"
         android:layout_height="155dp"
         android:layout_marginTop="24dp"

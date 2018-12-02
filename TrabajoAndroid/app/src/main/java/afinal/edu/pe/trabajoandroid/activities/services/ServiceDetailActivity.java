@@ -24,10 +24,10 @@ public class ServiceDetailActivity extends AppCompatActivity implements View.OnC
     String id;
     TextView txtservicenameshow;
     TextView txtservicepriceshow;
+    TextView txtservicedescshow;
 
     ImageButton btnservicebackshow;
     FirebaseDatabase db;
-    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,7 @@ public class ServiceDetailActivity extends AppCompatActivity implements View.OnC
 
         txtservicenameshow = findViewById(R.id.txtservicenameshow);
         txtservicepriceshow = findViewById(R.id.txtservicepriceshow);
+        txtservicedescshow=findViewById(R.id.txtservicedescshow);
         btnservicebackshow = findViewById(R.id.btnservicebackshow);
         btnservicebackshow.setOnClickListener(this);
 
@@ -70,6 +71,7 @@ public class ServiceDetailActivity extends AppCompatActivity implements View.OnC
                     Service servicio = dataSnapshot.getValue(Service.class);
                     txtservicenameshow.setText(servicio.getNombre());
                     txtservicepriceshow.setText(String.valueOf(servicio.getPrecio()));
+                    txtservicedescshow.setText(servicio.getDescripcion());
                 }
 
                 @Override

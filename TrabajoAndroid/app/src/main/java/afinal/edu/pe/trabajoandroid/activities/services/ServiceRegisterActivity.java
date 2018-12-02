@@ -17,6 +17,7 @@ public class ServiceRegisterActivity extends AppCompatActivity implements View.O
     ImageButton btnservicesave;
     TextView txtservicenameadd;
     TextView txtservicepriceadd;
+    TextView txtservicedescadd;
     FirebaseDatabase database;
 
 
@@ -28,6 +29,7 @@ public class ServiceRegisterActivity extends AppCompatActivity implements View.O
         btnservicesave=findViewById(R.id.btnservicesave);
         txtservicenameadd=findViewById(R.id.txtservicenameadd);
         txtservicepriceadd=findViewById(R.id.txtservicepriceadd);
+        txtservicedescadd=findViewById(R.id.txtservicedescadd);
         btnservicesave.setOnClickListener(this);
     }
 
@@ -42,6 +44,7 @@ public class ServiceRegisterActivity extends AppCompatActivity implements View.O
             servicio.setIdservicio(serviceActualRef.getKey());
             servicio.setNombre(txtservicenameadd.getText().toString());
             servicio.setPrecio(Float.valueOf(txtservicepriceadd.getText().toString()));
+            servicio.setDescripcion(txtservicedescadd.getText().toString());
 
             serviceRef.child(serviceActualRef.getKey()).setValue(servicio);
             this.finish();

@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,9 +23,10 @@ public class ClientDetailActivity extends AppCompatActivity implements View.OnCl
     TextView txtclientdnishow;
     TextView txtclientphoneshow;
     TextView txtclientemailshow;
+    TextView txtclientdirectionshow;
+    TextView txtclientciudadshow;
     ImageButton btnclientbackshow;
     FirebaseDatabase db;
-    FirebaseAuth auth;
 
 
     @Override
@@ -39,6 +39,7 @@ public class ClientDetailActivity extends AppCompatActivity implements View.OnCl
         txtclientdnishow=findViewById(R.id.txtclientdnishow);
         txtclientphoneshow=findViewById(R.id.txtclientphoneshow);
         txtclientemailshow=findViewById(R.id.txtclientemailshow);
+        txtclientciudadshow=findViewById(R.id.txtclientciudadshow);
         btnclientbackshow=findViewById(R.id.btnclientbackshow);
         btnclientbackshow.setOnClickListener(this);
 
@@ -78,6 +79,8 @@ public class ClientDetailActivity extends AppCompatActivity implements View.OnCl
                 txtclientdnishow.setText(cliente.getDocumento());
                 txtclientemailshow.setText(cliente.getEmail());
                 txtclientphoneshow.setText(cliente.getTelefono());
+                txtclientdirectionshow.setText(cliente.getDireccion());
+                txtclientciudadshow.setText(cliente.getCiudad());
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

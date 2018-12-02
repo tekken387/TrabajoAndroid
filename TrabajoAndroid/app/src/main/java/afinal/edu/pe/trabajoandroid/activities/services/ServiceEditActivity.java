@@ -24,6 +24,7 @@ public class ServiceEditActivity extends AppCompatActivity implements View.OnCli
     FirebaseDatabase db;
     EditText txtservicenameedit;
     EditText txtservicepriceedit;
+    EditText txtservicedescedit;
     ImageButton btnserviceedit;
     String id;
 
@@ -34,6 +35,7 @@ public class ServiceEditActivity extends AppCompatActivity implements View.OnCli
 
         txtservicenameedit=findViewById(R.id.txtservicenameedit);
         txtservicepriceedit=findViewById(R.id.txtservicepriceedit);
+        txtservicedescedit=findViewById(R.id.txtservicedescedit);
         btnserviceedit=findViewById(R.id.btnclientedit);
         btnserviceedit.setOnClickListener(this);
 
@@ -64,6 +66,7 @@ public class ServiceEditActivity extends AppCompatActivity implements View.OnCli
                 Service servicio = dataSnapshot.getValue(Service.class);
                 txtservicenameedit.setText(servicio.getNombre());
                 txtservicepriceedit.setText(String.valueOf(servicio.getPrecio()));
+                txtservicedescedit.setText(servicio.getDescripcion());
             }
 
             @Override

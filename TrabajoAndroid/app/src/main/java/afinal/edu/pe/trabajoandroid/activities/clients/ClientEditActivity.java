@@ -28,6 +28,8 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
     EditText txtclientdniedit;
     EditText txtclientemailedit;
     EditText txtclientphoneedit;
+    EditText txtclientdirectionedit;
+    EditText txtclientcityedit;
     ImageButton btnclientsaveedit;
     String id;
 
@@ -40,7 +42,10 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
         txtclientdniedit=findViewById(R.id.txtclientdniedit);
         txtclientemailedit=findViewById(R.id.txtclientemailedit);
         txtclientphoneedit=findViewById(R.id.txtclientphoneedit);
+        txtclientdirectionedit=findViewById(R.id.txtclientdirectionedit);
+        txtclientcityedit=findViewById(R.id.txtclientcityedit);
         btnclientsaveedit=findViewById(R.id.btnclientsaveedit);
+
         btnclientsaveedit.setOnClickListener(this);
 
         Bundle extras = getIntent().getExtras();
@@ -77,6 +82,8 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
                 txtclientdniedit.setText(cliente.getDocumento());
                 txtclientemailedit.setText(cliente.getEmail());
                 txtclientphoneedit.setText(cliente.getTelefono());
+                txtclientdirectionedit.setText(cliente.getDireccion());
+                txtclientcityedit.setText(cliente.getCiudad());
             }
 
             @Override
@@ -99,6 +106,8 @@ public class ClientEditActivity extends AppCompatActivity implements View.OnClic
         cliente.setDocumento(txtclientdniedit.getText().toString());
         cliente.setEmail(txtclientemailedit.getText().toString());
         cliente.setTelefono(txtclientphoneedit.getText().toString());
+        cliente.setDireccion(txtclientdirectionedit.getText().toString());
+        cliente.setCiudad(txtclientcityedit.getText().toString());
 
         HashMap map = new HashMap();
         map.put(id,cliente);

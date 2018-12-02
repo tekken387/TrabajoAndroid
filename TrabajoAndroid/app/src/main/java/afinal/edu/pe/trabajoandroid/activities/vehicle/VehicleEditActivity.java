@@ -58,7 +58,7 @@ public class VehicleEditActivity extends AppCompatActivity implements View.OnCli
         btnvehicleeditsave.setOnClickListener(this);
 
         Bundle extras = getIntent().getExtras();
-
+        client=null;
         if(extras == null) {
             id= null;
         } else {
@@ -88,7 +88,7 @@ public class VehicleEditActivity extends AppCompatActivity implements View.OnCli
 
                     DataSnapshot ds = dataSnapshot.child("cliente");
                     Iterable<DataSnapshot> dslist = ds.getChildren();
-                    client = null;
+
                     for (DataSnapshot d : dslist) {
                         client = d.getValue(Client.class);
                     }
@@ -137,29 +137,39 @@ public class VehicleEditActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        DatabaseReference vehicleRef = db.getReference("vehiculos");
+        try {
+            DatabaseReference vehicleRef = db.getReference("vehiculos/");
 
-        Vehicle ve=new Vehicle();
-        ve.setIdvehiculo(id);
-        ve.setTipo(txtvehicletypeedit.getText().toString());
-        ve.setPlaca(txtvehicleplacaedit.getText().toString());
-        ve.setModelo(txtvehiclemodeledit.getText().toString());
-        ve.setMarca(txtvehiclebrandedit.getText().toString());
-        //ve.setCliente(client);
+            Vehicle ve = new Vehicle();
+            ve.setIdvehiculo(id);
+            ve.setTipo(txtvehicletypeedit.getText().toString());
+            ve.setPlaca(txtvehicleplacaedit.getText().toString());
+            ve.setModelo(txtvehiclemodeledit.getText().toString());
+            ve.setMarca(txtvehiclebrandedit.getText().toString());
+            //ve.setCliente(client);
 
-        Map<String,Object> map = new HashMap();
-        map.put(id,ve);
-        map.put(id+"/cliente/"+client.getIdcliente(),client);
+            Map map = new HashMap();
+            map.put(id, ve);
+            vehicleRef.updateChildren(map);
+            //map.put(id+"/cliente/"+client.getIdcliente(),client);
 
-        vehicleRef.updateChildren(map);
-        Toast.makeText(this,"Se actualizó correctamente...",Toast.LENGTH_SHORT).show();
-        this.finish();
+            DatabaseReference vehicleclientRef = db.getReference("vehiculos/" + id + "/cliente/");
+            Map mapClient = new HashMap();
+            mapClient.put(client.getIdcliente(), client);
+            vehicleclientRef.updateChildren(mapClient);
+
+            Toast.makeText(this, "Se actualizó correctamente...", Toast.LENGTH_SHORT).show();
+            this.finish();
+        }catch (Exception ex){
+            Toast.makeText(this,ex.getMessage(),Toast.LENGTH_SHORT).show();
+            return;
+        }
 
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        client=(Client)parent.getAdapter().getItem(position);
     }
 
     @Override

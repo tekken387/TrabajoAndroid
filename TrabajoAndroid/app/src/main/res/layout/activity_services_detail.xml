@@ -116,7 +116,7 @@
         app:srcCompat="@drawable/back" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/txtservicedescshow"
         android:layout_width="195dp"
         android:layout_height="155dp"
         android:layout_marginTop="32dp"

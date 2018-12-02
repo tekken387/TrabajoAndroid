@@ -20,6 +20,8 @@ public class ClientRegisterActivity extends AppCompatActivity implements View.On
     TextView txtclientemailadd;
     TextView txtclientdniadd;
     TextView txtclientphoneadd;
+    TextView txtclientdirectionadd;
+    TextView txtclientcityadd;
     FirebaseDatabase database;
 
 
@@ -34,6 +36,8 @@ public class ClientRegisterActivity extends AppCompatActivity implements View.On
         txtclientnameadd=findViewById(R.id.txtclientnameadd);
         txtclientname2add=findViewById(R.id.txtclientname2add);
         txtclientphoneadd=findViewById(R.id.txtclientphoneadd);
+        txtclientdirectionadd=findViewById(R.id.txtclientdirectionadd);
+        txtclientcityadd=findViewById(R.id.txtclientcityadd);
         btnclientsaveadd.setOnClickListener(this);
 
     }
@@ -52,6 +56,8 @@ public class ClientRegisterActivity extends AppCompatActivity implements View.On
             cliente.setDocumento(txtclientdniadd.getText().toString());
             cliente.setEmail(txtclientemailadd.getText().toString());
             cliente.setTelefono(txtclientphoneadd.getText().toString());
+            cliente.setDireccion(txtclientdirectionadd.getText().toString());
+            cliente.setCiudad(txtclientcityadd.getText().toString());
 
             clientsRef.child(clientActualRef.getKey()).setValue(cliente);
 
