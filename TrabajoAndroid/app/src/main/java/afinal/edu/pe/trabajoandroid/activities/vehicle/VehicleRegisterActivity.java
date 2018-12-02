@@ -62,34 +62,38 @@ public class VehicleRegisterActivity extends AppCompatActivity implements View.O
         btnvehicleclientadd.setOnClickListener(this);
         txtvehicleclientadd.addTextChangedListener(this);
         txtvehicleclientadd.setOnItemClickListener(this);
-        client=null;
 
+        client=null;
         txtvehicleclientadd.setThreshold(1);
     }
 
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.btnvehiclesaveadd){
-            database = FirebaseDatabase.getInstance();
-            DatabaseReference vehiculosRef = database.getReference("vehiculos");
-            DatabaseReference vehiculoActualRef = vehiculosRef.push();
+            try {
+                database = FirebaseDatabase.getInstance();
+                DatabaseReference vehiculosRef = database.getReference("vehiculos");
+                DatabaseReference vehiculoActualRef = vehiculosRef.push();
 
 
-            Vehicle ve=new Vehicle();
-            ve.setIdvehiculo(vehiculoActualRef.getKey());
-            ve.setMarca(txtvehiclebrandadd.getText().toString());
-            ve.setModelo(txtvehiclemodeladd.getText().toString());
-            ve.setPlaca(txtvehicleplacaadd.getText().toString());
-            ve.setTipo(txtvehicletypeadd.getText().toString());
+                Vehicle ve = new Vehicle();
+                ve.setIdvehiculo(vehiculoActualRef.getKey());
+                ve.setMarca(txtvehiclebrandadd.getText().toString());
+                ve.setModelo(txtvehiclemodeladd.getText().toString());
+                ve.setPlaca(txtvehicleplacaadd.getText().toString());
+                ve.setTipo(txtvehicletypeadd.getText().toString());
 
-            if(client!=null){
+                if (client != null) {
 
-                vehiculosRef.child(vehiculoActualRef.getKey()).setValue(ve);
-                vehiculosRef.child(vehiculoActualRef.getKey()).child("cliente").child(client.getIdcliente()).setValue(client);
-                limpiar();
-                this.finish();
-            }else{
-                Toast.makeText(this,"Hubo un error al agregar cliente...",Toast.LENGTH_SHORT).show();
+                    vehiculosRef.child(vehiculoActualRef.getKey()).setValue(ve);
+                    vehiculosRef.child(vehiculoActualRef.getKey()).child("cliente").child(client.getIdcliente()).setValue(client);
+                    this.finish();
+                } else {
+                    Toast.makeText(this, "Hubo un error al agregar cliente...", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }catch (Exception ex){
+                Toast.makeText(this, ex.getMessage(), Toast.LENGTH_SHORT).show();
                 return;
             }
 
