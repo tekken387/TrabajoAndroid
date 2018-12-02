@@ -54,9 +54,9 @@ public class ClientAdapter extends FirebaseListAdapter<Client> {
                 Intent intent=new Intent(context,ClientEditActivity.class);
                 intent.putExtra("idcliente",c.getIdcliente());
                 context.startActivity(intent);
-
             }
         });
+
         _btnclientshow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -17,7 +17,6 @@ public class ClientsActivity extends AppCompatActivity implements View.OnClickLi
 
 
     ListView lvclients;
-    ArrayList<Client> clientes;
     ImageButton btnclientsadd;
 
     @Override
@@ -27,7 +26,6 @@ public class ClientsActivity extends AppCompatActivity implements View.OnClickLi
 
         btnclientsadd=findViewById(R.id.btnclientsadd);
         lvclients=findViewById(R.id.lvclients);
-        clientes=new ArrayList<>();
 
         btnclientsadd.setOnClickListener(this);
         cargaDatos();
@@ -35,7 +33,6 @@ public class ClientsActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void cargaDatos(){
-
         ClientAdapter adapter = new ClientAdapter(this);
         lvclients.setAdapter(adapter);
     }

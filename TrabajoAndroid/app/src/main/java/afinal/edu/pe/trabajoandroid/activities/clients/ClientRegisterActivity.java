@@ -56,6 +56,7 @@ public class ClientRegisterActivity extends AppCompatActivity implements View.On
             clientsRef.child(clientActualRef.getKey()).setValue(cliente);
 
             limpiar();
+            this.finish();
         }
     }
 
