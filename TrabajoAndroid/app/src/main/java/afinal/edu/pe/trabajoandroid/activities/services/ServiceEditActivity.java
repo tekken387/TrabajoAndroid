@@ -84,6 +84,7 @@ public class ServiceEditActivity extends AppCompatActivity implements View.OnCli
         servicio.setIdservicio(id);
         servicio.setNombre(txtservicenameedit.getText().toString());
         servicio.setPrecio(Float.valueOf(txtservicepriceedit.getText().toString()));
+        servicio.setDescripcion(txtservicedescedit.getText().toString());
 
         HashMap map = new HashMap();
         map.put(id,servicio);
