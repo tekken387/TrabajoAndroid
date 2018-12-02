@@ -13,6 +13,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="28dp"
+        android:inputType="text"
+        android:maxLines="1"
         android:text="Nombre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,6 +26,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="28dp"
+        android:inputType="text"
+        android:maxLines="1"
         android:text="Apellido"
         app:layout_constraintStart_toEndOf="@+id/txtclientname"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +39,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="84dp"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
         android:text="Email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

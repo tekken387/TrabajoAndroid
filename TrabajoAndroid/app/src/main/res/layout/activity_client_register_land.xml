@@ -48,6 +48,7 @@
             android:layout_marginRight="40dp"
             android:ems="10"
             android:inputType="textPersonName"
+            android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,6 +61,7 @@
             android:layout_marginRight="40dp"
             android:ems="10"
             android:inputType="textPersonName"
+            android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtclientnameadd" />
 
@@ -107,6 +109,7 @@
             android:layout_marginRight="40dp"
             android:ems="10"
             android:inputType="textEmailAddress"
+            android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtclientnameadd2" />
 
@@ -133,7 +136,9 @@
             android:layout_marginEnd="40dp"
             android:layout_marginRight="40dp"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="number"
+            android:maxLength="8"
+            android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtclientemailadd" />
 
@@ -161,7 +166,9 @@
             android:layout_marginEnd="40dp"
             android:layout_marginRight="40dp"
             android:ems="10"
-            android:inputType="textPersonName|phone"
+            android:inputType="phone"
+            android:maxLength="9"
+            android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtclientdniadd" />
 
@@ -190,7 +197,8 @@
             android:ems="10"
             android:inputType="textPersonName|phone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtclientphoneadd" />
+            app:layout_constraintTop_toBottomOf="@+id/txtclientphoneadd"
+            android:maxLines="1" />
 
         <TextView
             android:id="@+id/textView13"
@@ -216,6 +224,7 @@
             android:layout_marginRight="40dp"
             android:ems="10"
             android:inputType="textPersonName|phone"
+            android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtclientdirectionadd" />
 
