@@ -88,7 +88,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtservicedescriptionshow"
+        android:id="@+id/txtservicepriceshow"
         android:layout_width="180dp"
         android:layout_height="32dp"
         android:layout_marginTop="24dp"
