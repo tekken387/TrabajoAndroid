@@ -40,6 +40,7 @@ public class ClientDetailActivity extends AppCompatActivity implements View.OnCl
         txtclientphoneshow=findViewById(R.id.txtclientphoneshow);
         txtclientemailshow=findViewById(R.id.txtclientemailshow);
         txtclientciudadshow=findViewById(R.id.txtclientciudadshow);
+        txtclientdirectionshow=findViewById(R.id.txtclientdirectionshow);
         btnclientbackshow=findViewById(R.id.btnclientbackshow);
         btnclientbackshow.setOnClickListener(this);
 
